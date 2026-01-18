@@ -39,6 +39,22 @@ Este módulo explora técnicas modernas de engenharia de software para IA, focan
 24. **[24_LangGraph_Human_In_The_Loop.ipynb](./24_LangGraph_Human_In_The_Loop.ipynb)**: Pausando a execução para aprovação humana segura.
 25. **[25_LangGraph_Multi_Agent_Supervisor.ipynb](./25_LangGraph_Multi_Agent_Supervisor.ipynb)**: Arquitetura de Supervisor orquestrando múltiplos agentes especialistas.
 
+## Módulo 4: Engenharia de Prompt ReAct 🧠⚡
+
+Este módulo aprofunda no funcionamento interno dos Agentes, focando na construção de prompts robustos.
+
+26. **[26_ReAct_Fundamentos_Prompting.ipynb](./26_ReAct_Fundamentos_Prompting.ipynb)**: Entendendo e implementando o loop ReAct (Thought/Action/Observation) manualmente em Python.
+27. **[27_ReAct_LangChain_Implementation.ipynb](./27_ReAct_LangChain_Implementation.ipynb)**: Usando `create_react_agent` e analisando os prompts padrão do LangChain Hub.
+28. **[28_ReAct_Custom_Tools_Error_Handling.ipynb](./28_ReAct_Custom_Tools_Error_Handling.ipynb)**: Criando ferramentas complexas e prompts para recuperação automática de erros.
+
+## Módulo 5: Integração n8n 🟦⚡
+
+Este módulo foca na integração entre Agentes LangChain (Cérebro) e n8n (Músculos).
+
+29. **[29_n8n_Webhook_Client.ipynb](./29_n8n_Webhook_Client.ipynb)**: Usando Tools do LangChain para acionar Webhooks do n8n (Agente -> n8n).
+30. **[30_n8n_Python_Node_Prototyping.ipynb](./30_n8n_Python_Node_Prototyping.ipynb)**: Ambiente para prototipar código Python complexo antes de colar no "Code Node" do n8n.
+
+
 ## Como Usar
 
 1.  Abra o arquivo `.ipynb` desejado.

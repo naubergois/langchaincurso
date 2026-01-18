@@ -1,0 +1,38 @@
+--- Iniciando Upload para o Google Drive ---
+Pasta criada: LangChain_Curso_Uploads (ID: 1JFrfjXwoP0bIpXttuzx_OUUC2u0yOl_h)
+Encontrados 31 notebooks para upload.
+Upload: 11_Auditoria_Analise_Conformidade.ipynb
+Upload: 09_Agentes_Tools_Custom.ipynb
+Upload: 06_RAG_Embeddings_VectorStores.ipynb
+Upload: 03_Memoria.ipynb
+Upload: 02_Prompt_Templates_Parsers.ipynb
+Upload: 08_Agentes_Tools_Intro.ipynb
+Upload: 20_Auditoria_Agente_Investigativo.ipynb
+Upload: 19_Auditoria_Deteccao_Anomalias.ipynb
+Upload: 18_Auditoria_Escrita_Achados.ipynb
+Upload: 27_ReAct_LangChain_Implementation.ipynb
+Upload: 12_Auditoria_Extracao_Dados_Contratos.ipynb
+Upload: 10_Chatbot_RAG_Completo.ipynb
+Upload: 17_Auditoria_Geracao_Checklists.ipynb
+Upload: 30_n8n_Python_Node_Prototyping.ipynb
+Upload: 23_LangGraph_Intro_Fluxos_Ciclicos.ipynb
+Upload: 07_RAG_RetrievalQA.ipynb
+Upload: 01_Introducao_LangChain_Modelos.ipynb
+Upload: 25_LangGraph_Multi_Agent_Supervisor.ipynb
+Upload: 24_LangGraph_Human_In_The_Loop.ipynb
+Upload: 16_Auditoria_Comparacao_Normas.ipynb
+Upload: 14_Auditoria_Classificacao_Riscos.ipynb
+Upload: 22_LangChain_Structured_Output_Pydantic.ipynb
+Upload: 13_Auditoria_Resumo_Relatorios.ipynb
+Upload: 28_ReAct_Custom_Tools_Error_Handling.ipynb
+Upload: 05_RAG_Document_Loaders.ipynb
+Upload: 29_n8n_Webhook_Client.ipynb
+Upload: 26_ReAct_Fundamentos_Prompting.ipynb
+Upload: 04_Chains.ipynb
+Upload: 15_Auditoria_RAG_Legislacao.ipynb
+Upload: 21_Pydantic_Fundamentos.ipynb
+Pasta criada: n8n (ID: 1gBFOzxeLhFRywhILhOrEPZ4CSzE6ExRN)
+Upload: 01_Rodar_n8n_no_Colab.ipynb
+
+--- Concluído! ---
+Arquivo 'colab_links.md' gerado com 31 links.
