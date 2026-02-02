@@ -43,6 +43,17 @@ Acesse os notebooks diretamente no Google Colab para execução imediata na nuve
 
 ---
 
+## ✈️ Estudo de Caso: SkyFlow Airlines
+
+Um sistema multi-agente completo (Supervisor + Especialistas) integrado com uma interface Streamlit.
+
+- **Arquitetura**: supervisor_agent + specialize_agents (Reservas, Voos, Suporte).
+- **Interface**: [skyflow_airline/app.py](file:///Users/naubergois/langchaincurso/skyflow_airline/app.py)
+- **Como rodar**:
+```bash
+python3 -m streamlit run skyflow_airline/app.py
+```
+
 ## 🛠️ Automações Realizadas
 
 Este repositório foi totalmente automatizado para facilitar o aprendizado:
