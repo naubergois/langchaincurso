@@ -24,26 +24,29 @@ def authenticate_drive():
     """Autentica o usuário e retorna o serviço do Drive API."""
     creds = None
     # O arquivo token.json armazena os tokens de acesso e atualização do usuário
-    if os.path.exists('token.json'):
-        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+    token_path = os.path.join(script_dir, 'token.json')
+    if os.path.exists(token_path):
+        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
     
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            if not os.path.exists(CREDENTIALS_FILE):
-                print(f"ERRO: Arquivo '{CREDENTIALS_FILE}' não encontrado.")
-                print("1. Vá em https://console.cloud.google.com/")
-                print("2. Crie um projeto e habilite a Google Drive API.")
-                print("3. Crie credenciais (OAuth Client ID - Desktop App).")
-                print(f"4. Salve como '{CREDENTIALS_FILE}' nesta pasta ou atualize o .env.")
+            # Se o arquivo de credenciais for relativo, tenta achar no scripts/
+            if not os.path.isabs(CREDENTIALS_FILE):
+                credentials_path = os.path.join(script_dir, os.path.basename(CREDENTIALS_FILE))
+            else:
+                credentials_path = CREDENTIALS_FILE
+
+            if not os.path.exists(credentials_path):
+                print(f"ERRO: Arquivo '{credentials_path}' não encontrado.")
                 return None
             
             flow = InstalledAppFlow.from_client_secrets_file(
-                CREDENTIALS_FILE, SCOPES)
+                credentials_path, SCOPES)
             creds = flow.run_local_server(port=0)
         
-        with open('token.json', 'w') as token:
+        with open(token_path, 'w') as token:
             token.write(creds.to_json())
 
     return build('drive', 'v3', credentials=creds)
@@ -114,6 +117,11 @@ def upload_file(service, file_path, folder_id):
         
     return file_id
 
+def get_folder_link(service, folder_id):
+    """Retorna o link de visualização da pasta."""
+    folder = service.files().get(fileId=folder_id, fields='webViewLink').execute()
+    return folder.get('webViewLink')
+
 def main():
     service = authenticate_drive()
     if not service:
@@ -123,44 +131,58 @@ def main():
     
     root_folder_id = create_or_get_folder(service, TARGET_FOLDER_NAME)
     
-    notebooks = glob.glob(os.path.join(BASE_DIR, "**", "*.ipynb"), recursive=True)
-    notebooks = [n for n in notebooks if ".venv" not in n and ".git" not in n and "ipynb_checkpoints" not in n]
+    # Procurar por .ipynb e .py
+    patterns = ["*.ipynb", "*.py"]
+    files_to_upload = []
+    for pattern in patterns:
+        files_to_upload.extend(glob.glob(os.path.join(BASE_DIR, pattern)))
 
-    print(f"Encontrados {len(notebooks)} notebooks para upload.")
+    # Filtrar arquivos indesejados
+    files_to_upload = [
+        f for f in files_to_upload 
+        if "checkpoint" not in f
+        and "test_notebook" not in f
+    ]
+
+    print(f"Encontrados {len(files_to_upload)} arquivos para upload.")
 
     links_summary = []
 
-    for notebook_path in notebooks:
-        relative_path = os.path.relpath(notebook_path, BASE_DIR)
-        directory = os.path.dirname(relative_path)
+    for file_path in sorted(files_to_upload):
+        relative_path = os.path.basename(file_path)
         
-        if directory and directory != ".":
-            target_id = create_or_get_folder(service, directory, parent_id=root_folder_id)
-        else:
-            target_id = root_folder_id
-            
         try:
-            file_id = upload_file(service, notebook_path, target_id)
+            file_id = upload_file(service, file_path, root_folder_id)
             
             # Torna Público
             make_file_public(service, file_id)
             
-            # Gera Link do Colab
-            # Formato: https://colab.research.google.com/drive/<ID>
-            colab_link = f"https://colab.research.google.com/drive/{file_id}"
+            # Gera Link dependendo do tipo
+            if file_path.endswith('.ipynb'):
+                link = f"https://colab.research.google.com/drive/{file_id}"
+            else:
+                f_info = service.files().get(fileId=file_id, fields='webViewLink').execute()
+                link = f_info.get('webViewLink')
             
-            links_summary.append(f"- [{relative_path}]({colab_link})")
+            links_summary.append(f"- [{relative_path}]({link})")
             
         except Exception as e:
             print(f"Falha em {relative_path}: {e}")
 
+    # Faz a pasta raiz pública
+    make_file_public(service, root_folder_id)
+    folder_link = get_folder_link(service, root_folder_id)
+
     # Salva o índice de links
-    with open(os.path.join(BASE_DIR, "colab_links.md"), "w") as f:
-        f.write("# Links para o Google Colab 🚀\\n\\n")
-        f.write("\\n".join(links_summary))
+    with open(os.path.join(BASE_DIR, "links_drive.md"), "w") as f:
+        f.write(f"# Links para o Google Drive 🚀\n\n")
+        f.write(f"📂 **Pasta completa:** [Clique aqui para acessar]({folder_link})\n\n")
+        f.write("## Arquivos Individuais\n\n")
+        f.write("\n".join(links_summary))
         
     print("\n--- Concluído! ---")
-    print(f"Arquivo 'colab_links.md' gerado com {len(links_summary)} links.")
+    print(f"Pasta no Drive: {folder_link}")
+    print(f"Arquivo 'links_drive.md' gerado com {len(links_summary)} links.")
 
 if __name__ == '__main__':
     main()

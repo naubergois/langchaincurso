@@ -1,72 +1,63 @@
-# Curso Prático de LangChain 🦜🔗
+# LangChain Curso Prático 🦜🔗
 
-Este repositório contém **20 notebooks Jupyter** com exemplos práticos de como usar o LangChain, divididos em um módulo fundamental e um **módulo focado em Auditoria**. O curso foi desenhado para ser executado no **Google Colab**.
+Este repositório contém o material completo do curso prático de LangChain, focado em aplicações reais e automação.
 
-🎨 **[Acesse a Apresentação do Curso (Canva)](https://www.canva.com/design/DAG91TtMVPQ/xYaS5u5TaYFVlYeIYsATUw/edit?utm_content=DAG91TtMVPQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)**
+## 🚀 Acesso Rápido (Google Colab)
 
-## Módulo 1: Fundamentos
+Acesse os notebooks diretamente no Google Colab para execução imediata na nuvem:
 
-1.  **[01_Introducao_LangChain_Modelos.ipynb](./01_Introducao_LangChain_Modelos.ipynb)**: Introdução, instalação e chamadas básicas a ChatModels.
-2.  **[02_Prompt_Templates_Parsers.ipynb](./02_Prompt_Templates_Parsers.ipynb)**: Criação de Templates de Prompt e Formatação de Saída (LCEL).
-3.  **[03_Memoria.ipynb](./03_Memoria.ipynb)**: Como adicionar memória (histórico) às conversas.
-4.  **[04_Chains.ipynb](./04_Chains.ipynb)**: Criando cadeias sequenciais e execução paralela.
-5.  **[05_RAG_Document_Loaders.ipynb](./05_RAG_Document_Loaders.ipynb)**: RAG Parte 1 - Carregando e dividindo documentos da web.
-6.  **[06_RAG_Embeddings_VectorStores.ipynb](./06_RAG_Embeddings_VectorStores.ipynb)**: RAG Parte 2 - Criando Embeddings e armazenando no FAISS.
-7.  **[07_RAG_RetrievalQA.ipynb](./07_RAG_RetrievalQA.ipynb)**: RAG Parte 3 - Chain completa de perguntas e respostas sobre documentos.
-8.  **[08_Agentes_Tools_Intro.ipynb](./08_Agentes_Tools_Intro.ipynb)**: Introdução a Agentes e uso de ferramentas prontas (DuckDuckGo).
-9.  **[09_Agentes_Tools_Custom.ipynb](./09_Agentes_Tools_Custom.ipynb)**: Criando suas próprias ferramentas (Tools) em Python.
-10. **[10_Chatbot_RAG_Completo.ipynb](./10_Chatbot_RAG_Completo.ipynb)**: **Projeto Final** - Chatbot que interage com arquivos PDF (ChatPDF).
+| Nome do Notebook | Link Colab |
+| :--- | :--- |
+| **Pasta Completa no Drive** | [📂 Acessar Pasta](https://drive.google.com/drive/folders/1JFrfjXwoP0bIpXttuzx_OUUC2u0yOl_h) |
+| 01. Introdução ao LangChain | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1z6isoUEUpOJNvqr-E04RKWrB-W-EYik4) |
+| 02. Prompt Templates & Parsers | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1lrt-IR2P-kDjkHOdWZLZ0BIDhC-blcxC) |
+| 03. Memória | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1nryjaLwIrTXTzcUJwP_WuJ9YQE1EosPk) |
+| 04. Chains (LCEL) | [🚀 Abrir no Colab](https://colab.research.google.com/drive/13w7XuDiUFjj8ODKxV5T5rw8ycJAX7lnS) |
+| 05. RAG: Document Loaders | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1QFlNdrFwVWfW1Yvbp_jkAcuj6CGMI2o2) |
+| 06. RAG: Embeddings & Vector Stores | [🚀 Abrir no Colab](https://colab.research.google.com/drive/101-yfUgH_bTME6m3c9Vp8aEOcaDGTr-C) |
+| 07. RAG: RetrievalQA | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1zp80u7PFIJUHUnd1bMUVygEPb8AwdBT2) |
+| 08. Agentes & Tools: Introdução | [🚀 Abrir no Colab](https://colab.research.google.com/drive/12FZUDKVaorngwOm88qIRhhLQRKn4L7oV) |
+| 09. Agentes & Tools: Customização | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1150XVz8GMrQdfVlrCjjLzURDGMI0nj8Z) |
+| 10. Chatbot RAG Completo | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1li9zEmq7Yac2AbOGOGGIBhmaOqb7TsmK) |
+| 11. Auditoria: Análise de Conformidade | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1Peb3SSzwbT3WXXdXszNpiRaUPm09ysy4) |
+| 12. Auditoria: Extração de Dados | [🚀 Abrir no Colab](https://colab.research.google.com/drive/17GBwzrHciYXnRfI3oCpJQsZSkHi9TMpU) |
+| 13. Auditoria: Resumo de Relatórios | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1whbtr7vZoiew2ZEMA0308vrRc3pXkA_g) |
+| 14. Auditoria: Classificação de Riscos | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1eForbNI0bYMymtOsFcYIh7eee5z3HKKB) |
+| 15. Auditoria: RAG Legislação | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1ou1xv6dmxyTBTRr0HbiqOURn0W0Ul_c2) |
+| 16. Auditoria: Comparação de Normas | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1gL0NVZwj0jaAodklXDcq1aZJS8Ut7u0Q) |
+| 17. Auditoria: Geração de Checklists | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1vhkW7kV_3gnwP0Pft8yToDJAgnTucIdS) |
+| 18. Auditoria: Escrita de Achados | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1X0ijBnceiSdTlPLmUbDsXY8p6NR1Lzlx) |
+| 19. Auditoria: Detecção de Anomalias | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1K0b_5QoZCKrJlsT39s_wOZMQLi1Kn7Zg) |
+| 20. Auditoria: Agente Investigativo | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1GS0Vq4AMJAQRffcTJiZIJpJixRESBZIE) |
+| 21. Pydantic: Fundamentos | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1WR6ObPNK4nVG-yo4BUrk_k8QnSjgm3gl) |
+| 22. Structured Output com Pydantic | [🚀 Abrir no Colab](https://colab.research.google.com/drive/10TDTtlV4z_LSp1c9ysxsTHksGF-JXxmM) |
+| 23. LangGraph: Fluxos Cíclicos | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1jY4lFmRC9yZ1x_A1LYyU7hNnHdTo-I8Y) |
+| 24. LangGraph: Human-in-the-loop | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1JDs1Pv-irylU5Es-hjkmKRw24jp9leqF) |
+| 25. LangGraph: Multi-Agent Supervisor | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1LCbNzEURsdYgMR_y5zkNwexKpF7krWDF) |
+| 26. LangSmith: Introdução | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1BnW4TyCTIByQAAPUgkXLOhVNdYZ0ZTIS) |
+| 26. ReAct: Fundamentos | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1-voC8HJclgRXykHomJQelDefQUI-WfeB) |
+| 27. ReAct: Implementação LangChain | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1ZWP-yL0_71csKL01NwaVqBcw3SaexYp_) |
+| 28. ReAct: Custom Tools & Erros | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1TskJru7IF82Nz_ufu1IjyAiJ1IXKNXnp) |
+| 29. n8n: Webhook Client | [🚀 Abrir no Colab](https://colab.research.google.com/drive/12KLDSxeVbKVUSzUE4eRxV1hQ11Iz0vvW) |
+| 30. n8n: Python Node Prototyping | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1Fv12u76oU1RViKmEkW86PuviYDqELQrB) |
 
-## Módulo 2: Casos de Uso em Auditoria 🕵️‍♂️📋
+---
 
-Este módulo foca na aplicação de IA Generativa para rotinas de Auditores, Analistas de Risco e Compliance.
+## 🛠️ Automações Realizadas
 
-11. **[11_Auditoria_Analise_Conformidade.ipynb](./11_Auditoria_Analise_Conformidade.ipynb)**: Verificação automática de regras em despesas e transações.
-12. **[12_Auditoria_Extracao_Dados_Contratos.ipynb](./12_Auditoria_Extracao_Dados_Contratos.ipynb)**: Extração de dados estruturados (JSON) de textos jurídicos.
-13. **[13_Auditoria_Resumo_Relatorios.ipynb](./13_Auditoria_Resumo_Relatorios.ipynb)**: Sumarização de relatórios longos focada em riscos.
-14. **[14_Auditoria_Classificacao_Riscos.ipynb](./14_Auditoria_Classificacao_Riscos.ipynb)**: Classificação automática de apontamentos (Alto/Médio/Baixo).
-15. **[15_Auditoria_RAG_Legislacao.ipynb](./15_Auditoria_RAG_Legislacao.ipynb)**: Chatbot especialista em legislação específica (ex: Lei das Estatais).
-16. **[16_Auditoria_Comparacao_Normas.ipynb](./16_Auditoria_Comparacao_Normas.ipynb)**: Diff semântico entre duas versões de normas internas.
-17. **[17_Auditoria_Geracao_Checklists.ipynb](./17_Auditoria_Geracao_Checklists.ipynb)**: Geração de programas de trabalho baseados na descrição do processo.
-18. **[18_Auditoria_Escrita_Achados.ipynb](./18_Auditoria_Escrita_Achados.ipynb)**: Reformatação de achados no padrão "5 Cs" (Condition, Criteria, etc).
-19. **[19_Auditoria_Deteccao_Anomalias.ipynb](./19_Auditoria_Deteccao_Anomalias.ipynb)**: Detecção de fraude e pressão em e-mails corporativos.
+Este repositório foi totalmente automatizado para facilitar o aprendizado:
 
-## Módulo 3: Avançado - Pydantic e LangGraph 🤖🕸️
+1.  **Migração para Gemini**: Todos os notebooks foram convertidos de OpenAI para `gemini-2.0-flash`.
+2.  **Autenticação Local**: Uso de arquivos `.env` para gerenciar chaves de API sem exposição.
+3.  **Explicações Detalhadas**: Cada notebook agora possui uma seção de documentação teórica gerativa.
+4.  **Execução Completa**: Todos os notebooks possuem saídas salvas em todas as células.
+5.  **Scripts Python**: Versões `.py` geradas para cada lição.
 
-Este módulo explora técnicas modernas de engenharia de software para IA, focando em robustez e agentes complexos.
+## ⚙️ Como Executar Localmente
 
-21. **[21_Pydantic_Fundamentos.ipynb](./21_Pydantic_Fundamentos.ipynb)**: Fundamentos de validação de dados em Python.
-22. **[22_LangChain_Structured_Output_Pydantic.ipynb](./22_LangChain_Structured_Output_Pydantic.ipynb)**: Garantindo saídas JSON válidas com modelos de linguagem.
-23. **[23_LangGraph_Intro_Fluxos_Ciclicos.ipynb](./23_LangGraph_Intro_Fluxos_Ciclicos.ipynb)**: Introdução a grafos e loops de feedback (não-linear).
-24. **[24_LangGraph_Human_In_The_Loop.ipynb](./24_LangGraph_Human_In_The_Loop.ipynb)**: Pausando a execução para aprovação humana segura.
-25. **[25_LangGraph_Multi_Agent_Supervisor.ipynb](./25_LangGraph_Multi_Agent_Supervisor.ipynb)**: Arquitetura de Supervisor orquestrando múltiplos agentes especialistas.
+1.  Clone o repositório.
+2.  Crie um arquivo `.env` na pasta `scripts/` com sua `GOOGLE_API_KEY`.
+3.  Instale as dependências: `pip install -r requirements.txt`.
+4.  Execute os notebooks ou scripts Python.
 
-## Módulo 4: Engenharia de Prompt ReAct 🧠⚡
-
-Este módulo aprofunda no funcionamento interno dos Agentes, focando na construção de prompts robustos.
-
-26. **[26_ReAct_Fundamentos_Prompting.ipynb](./26_ReAct_Fundamentos_Prompting.ipynb)**: Entendendo e implementando o loop ReAct (Thought/Action/Observation) manualmente em Python.
-27. **[27_ReAct_LangChain_Implementation.ipynb](./27_ReAct_LangChain_Implementation.ipynb)**: Usando `create_react_agent` e analisando os prompts padrão do LangChain Hub.
-28. **[28_ReAct_Custom_Tools_Error_Handling.ipynb](./28_ReAct_Custom_Tools_Error_Handling.ipynb)**: Criando ferramentas complexas e prompts para recuperação automática de erros.
-
-## Módulo 5: Integração n8n 🟦⚡
-
-Este módulo foca na integração entre Agentes LangChain (Cérebro) e n8n (Músculos).
-
-29. **[29_n8n_Webhook_Client.ipynb](./29_n8n_Webhook_Client.ipynb)**: Usando Tools do LangChain para acionar Webhooks do n8n (Agente -> n8n).
-30. **[30_n8n_Python_Node_Prototyping.ipynb](./30_n8n_Python_Node_Prototyping.ipynb)**: Ambiente para prototipar código Python complexo antes de colar no "Code Node" do n8n.
-
-
-## Como Usar
-
-1.  Abra o arquivo `.ipynb` desejado.
-2.  Clique no botão "Open in Colab" (se disponível) ou faça upload para o seu Google Drive/Colab.
-3.  Você precisará de uma **OpenAI API Key**.
-4.  Execute as células sequencialmente.
-
-## Tecnologias
-
-- LangChain
-- OpenAI GPT-3.5 / GPT-4
-- FAISS (Vector Database)
-- DuckDuckGo Search (Tool)
+Desenvolvido para fins educacionais. 🚀
