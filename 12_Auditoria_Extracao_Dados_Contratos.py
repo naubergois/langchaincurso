@@ -7,6 +7,36 @@
 # 
 # **Objetivo:** Extrair Contratante, Contratada, Valor Mensal e Foro de um texto jurídico.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 12. Auditoria: Extração de Dados de Contratos
+# 
+# Este notebook demonstra como automatizar a extração de dados chave de contratos em formato PDF, uma tarefa crucial para auditores e outros profissionais que lidam com grandes volumes de documentos legais. A extração manual de informações como datas, valores e multas é demorada e propensa a erros. Este notebook apresenta uma solução eficiente utilizando LangChain e modelos de linguagem generativa para transformar texto não estruturado em dados estruturados, prontos para análise e relatórios.
+# 
+# **Conceitos Chave:**
+# 
+# *   **Chains (Correntes):** No contexto do LangChain, Chains são sequências de chamadas a componentes, como modelos de linguagem, prompts e outras utilidades. Elas permitem construir fluxos de trabalho complexos e automatizados para processamento de linguagem natural.
+# *   **Pydantic:** Uma biblioteca Python para validação de dados e gerenciamento de configurações. Usamos Pydantic para definir o esquema de saída dos dados extraídos, garantindo que o resultado seja um JSON válido e consistente.
+# *   **Modelos de Linguagem Generativa:** Modelos como Gemini da Google, capazes de entender e gerar texto. Usamos esses modelos para analisar o texto do contrato e extrair as informações relevantes.
+# *   **Schema de Saída:** A estrutura predefinida dos dados que queremos extrair, definindo os campos (e.g., contratante, contratada, valor do contrato) e seus tipos de dados.
+# 
+# **Objetivos de Aprendizado:**
+# 
+# Após completar este notebook, você será capaz de:
+# 
+# *   Definir um schema de saída utilizando Pydantic para representar os dados extraídos de um contrato.
+# *   Configurar um modelo de linguagem generativa (como Gemini) para realizar a extração de dados com o LangChain.
+# *   Automatizar a extração de dados chave de contratos em formato de texto.
+# *   Converter os dados extraídos em um objeto Python ou formato JSON para facilitar a análise e integração com outras ferramentas.
+# *   Compreender o fluxo de trabalho completo para transformar texto não estruturado em dados estruturados.
+# 
+# **Importância no Ecossistema LangChain:**
+# 
+# A capacidade de extrair informações de documentos é fundamental para diversas aplicações no ecossistema LangChain. Este notebook demonstra um caso de uso específico para auditoria de contratos, mas os princípios podem ser aplicados a outros tipos de documentos, como relatórios financeiros, artigos científicos e e-mails. Dominar essa técnica permite construir aplicações mais inteligentes e automatizadas, capazes de analisar grandes volumes de texto e fornecer insights valiosos. Ao automatizar a extração de dados, você economiza tempo, reduz erros e libera recursos para atividades mais estratégicas.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###

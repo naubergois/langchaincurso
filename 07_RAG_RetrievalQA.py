@@ -8,9 +8,58 @@
 # **Objetivos:**
 # - Criar uma `create_retrieval_chain` para responder perguntas baseadas nos documentos.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 07. RAG Parte 3: RetrievalQA
+# 
+# Neste notebook, vamos consolidar o que aprendemos sobre Retrieval Augmented Generation (RAG) e construir um sistema completo e funcional. Uniremos as peças: documentos, divisão (splitting), armazenamento de vetores (vector store), recuperação (retriever), LLM (Large Language Model) e, finalmente, a resposta!
+# 
+# **Resumo Executivo:**
+# 
+# Este notebook marca o ponto culminante da nossa jornada de RAG. Implementaremos um sistema completo que recebe uma pergunta, busca informações relevantes em uma base de conhecimento, e utiliza um LLM para gerar uma resposta fundamentada. Aprenderemos a orquestrar todos os componentes do pipeline RAG, desde o carregamento e processamento dos documentos até a geração da resposta final.
+# 
+# **Conceitos Chave:**
+# 
+# *   **RAG (Retrieval Augmented Generation):** Uma técnica que combina a capacidade de recuperação de informações de um sistema de busca com a habilidade de geração de texto de um modelo de linguagem. Isso permite que o LLM responda perguntas com base em informações externas, em vez de depender apenas do seu conhecimento pré-existente.
+# *   **Chains (Correntes):** No contexto do LangChain, Chains são sequências de chamadas a componentes, como LLMs, prompts e utilitários. Elas permitem criar fluxos de trabalho complexos e automatizados. Neste notebook, usaremos chains para orquestrar o processo de recuperação e geração.
+# *   **Retriever (Recuperador):** Um componente responsável por buscar documentos relevantes em uma base de conhecimento, com base em uma consulta. Usaremos um retriever para encontrar os documentos mais relevantes para responder à pergunta do usuário.
+# *   **Vector Store (Armazenamento de Vetores):** Uma base de dados especializada em armazenar representações vetoriais de documentos. Isso permite realizar buscas semânticas eficientes, encontrando documentos que são semanticamente similares à consulta, mesmo que não compartilhem palavras-chave exatas.
+# 
+# **Objetivos de Aprendizado:**
+# 
+# Ao completar este notebook, você será capaz de:
+# 
+# *   Construir um pipeline RAG completo usando LangChain.
+# *   Implementar a função `create_retrieval_chain` para responder a perguntas com base em documentos recuperados.
+# *   Entender como os diferentes componentes do pipeline RAG interagem entre si.
+# *   Inspecionar as fontes de informação utilizadas para gerar uma resposta.
+# *   Adaptar e personalizar o pipeline RAG para diferentes casos de uso.
+# 
+# **Importância no Ecossistema LangChain:**
+# 
+# O RAG é uma das aplicações mais importantes e poderosas do LangChain. Ele permite construir sistemas que podem responder a perguntas complexas, gerar conteúdo personalizado e realizar tarefas de raciocínio, tudo com base em informações externas e atualizadas. Dominar o RAG é fundamental para construir aplicações de IA Generativa robustas e úteis.
+# 
+# Vamos começar!
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
+import os
+from dotenv import load_dotenv
+import sys
+for p in ['.', '..', 'scripts', '../scripts']:
+    path = os.path.join(p, '.env')
+    if os.path.exists(path):
+        load_dotenv(path)
+        break
+if os.getenv('GOOGLE_API_KEY'):
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+### INJECTION END ###
+
 import os
 from dotenv import load_dotenv
 import sys
@@ -35,13 +84,11 @@ for p in ['.', '..', 'scripts', '../scripts']:
         load_dotenv(path)
         break
 if os.getenv('GOOGLE_API_KEY'):
-    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
 
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
-# !pip install -qU langchain langchain-openai langchain-community faiss-cpu python-dotenv # Script-patched
 
 
 
@@ -79,7 +126,7 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20
 splits = text_splitter.split_documents(docs)
 
 # 3. Index
-vectorstore = FAISS.from_documents(splits, GoogleGenerativeAIEmbeddings())
+vectorstore = FAISS.from_documents(splits, GoogleGenerativeAIEmbeddings(model="models/embedding-001"))
 retriever = vectorstore.as_retriever()
 
 
@@ -146,3 +193,21 @@ for i, doc in enumerate(response["context"]):
 # Temos um sistema de RAG funcional! Ele recupera informação relevante e responde de forma fundamentada.
 # 
 # No próximo notebook, vamos sair do padrão "pergunta-resposta" e entrar no mundo dos **Agentes**, que podem usar ferramentas para agir.
+
+# 
+
+# 
+
+# 
+
+# 
+
+# 
+
+# 
+
+# 
+
+# 
+
+# 

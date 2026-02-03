@@ -14,6 +14,41 @@
 # 
 # ---
 
+# # Explicação Detalhada do Assunto
+# 
+# # 28. ReAct Avançado: Ferramentas Personalizadas e Robustez
+# 
+# Bem-vindo(a) ao notebook 28 da nossa série sobre LangChain e IA Generativa! Neste módulo avançado, mergulharemos na criação de agentes ReAct robustos e personalizados, com foco em ferramentas customizadas e tratamento de erros. A capacidade de construir agentes que interagem de forma eficaz com ferramentas complexas e que lidam graciosamente com erros é crucial para aplicações de IA generativa no mundo real.
+# 
+# **Resumo Executivo:**
+# 
+# Este notebook te guiará na construção de agentes ReAct que utilizam ferramentas personalizadas com múltiplos argumentos (ferramentas estruturadas) e que implementam estratégias de tratamento de erros. Aprenderemos a definir o schema de entrada dessas ferramentas, a entender o impacto da descrição da ferramenta no prompt do agente e a personalizar o tratamento de erros para garantir que o agente se recupere de falhas de formatação de forma inteligente.
+# 
+# **Conceitos Chave:**
+# 
+# *   **ReAct:** Uma metodologia para construir agentes que combinam "Reasoning" (raciocínio) e "Acting" (ação). Agentes ReAct geram pensamentos (Thoughts) para raciocinar sobre o problema, decidem qual ação (Action) tomar e observam os resultados (Observation) antes de repetir o ciclo.
+# *   **Ferramentas Estruturadas (Structured Tools):** Ferramentas que aceitam múltiplos argumentos, definidos através de um schema de entrada. Isso permite a criação de ferramentas mais complexas e flexíveis.
+# *   **Schema de Entrada:** A definição dos argumentos que uma ferramenta estruturada espera receber, incluindo o tipo de dado de cada argumento e uma descrição. Usamos Pydantic `BaseModel` para definir esses schemas.
+# *   **Prompt Engineering:** A arte de criar prompts eficazes para guiar o comportamento de um modelo de linguagem. Neste contexto, exploraremos como a descrição da ferramenta influencia a forma como o agente a utiliza.
+# *   **Tratamento de Erros (Error Handling):** A capacidade de um agente de detectar e se recuperar de erros, como falhas de formatação na entrada da ferramenta. Personalizaremos o tratamento de erros para fornecer feedback útil ao agente e guiá-lo na correção do problema.
+# 
+# **Objetivos de Aprendizado:**
+# 
+# Ao final deste notebook, você será capaz de:
+# 
+# *   Criar ferramentas estruturadas com múltiplos argumentos usando Pydantic.
+# *   Entender como a descrição da ferramenta afeta o comportamento do agente.
+# *   Construir um agente ReAct que utiliza ferramentas estruturadas.
+# *   Implementar estratégias personalizadas de tratamento de erros para agentes ReAct.
+# *   Personalizar o prompt para a correção de erros de formatação.
+# 
+# **Importância no Ecossistema LangChain:**
+# 
+# O LangChain simplifica a construção de agentes complexos, mas o sucesso depende da capacidade de integrar ferramentas personalizadas e de garantir que o agente lide com erros de forma graciosa. Este notebook explora aspectos cruciais da engenharia de agentes ReAct no LangChain, permitindo que você crie aplicações de IA generativa mais robustas e confiáveis. Dominar esses conceitos é fundamental para construir agentes que resolvem problemas complexos no mundo real. Vamos começar!
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -27,7 +62,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 # !pip install -q langchain langchain-openai pydantic # Script-patched

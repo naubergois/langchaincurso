@@ -7,6 +7,43 @@
 # 
 # **Objetivo:** Comparar duas versões de um parágrafo normativo.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 16. Auditoria: Comparação de Normas (Diff Semântico)
+# 
+# Bem-vindo(a) a este notebook dedicado à aplicação de IA Generativa na auditoria e comparação de normas internas!
+# 
+# Normas internas estão em constante evolução, refletindo mudanças nas estratégias, regulamentações e necessidades da organização. As tradicionais ferramentas de "diff" de texto são eficientes em identificar alterações letra por letra, mas frequentemente falham em capturar o impacto semântico dessas mudanças. Este notebook explora como um LLM (Large Language Model) pode ser utilizado para analisar e comparar diferentes versões de um documento normativo, identificando as alterações de maior impacto e fornecendo uma compreensão mais profunda das implicações dessas mudanças.
+# 
+# ## Resumo Executivo
+# 
+# Neste notebook, você aprenderá a usar o LangChain e um LLM para realizar uma auditoria inteligente de documentos normativos. Em vez de focar em diferenças textuais superficiais, nosso objetivo é identificar e resumir as mudanças que realmente importam, como alterações na política de home office, benefícios oferecidos ou responsabilidades atribuídas. Isso permite uma análise mais eficiente e focada, economizando tempo e recursos.
+# 
+# ## Conceitos Chave
+# 
+# Para aproveitar ao máximo este notebook, é importante entender alguns conceitos fundamentais:
+# 
+# *   **LLM (Large Language Model):** Modelos de linguagem treinados em grandes volumes de dados, capazes de entender e gerar texto de forma inteligente. Usaremos um LLM para analisar o conteúdo das normas e identificar as mudanças significativas.
+# *   **Prompt Engineering:** A arte de criar prompts eficazes para direcionar o LLM a realizar a tarefa desejada. Um bom prompt é crucial para obter resultados precisos e relevantes.
+# *   **LangChain:** Um framework poderoso para construir aplicações baseadas em LLMs. Ele simplifica a criação de fluxos de trabalho complexos, como a comparação de documentos e a extração de informações relevantes.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Importar e preparar documentos normativos em diferentes versões.
+# *   Utilizar o LangChain para interagir com um LLM e realizar a comparação semântica das normas.
+# *   Criar prompts eficazes para direcionar o LLM a identificar as mudanças de maior impacto.
+# *   Interpretar os resultados gerados pelo LLM e identificar as implicações das mudanças nas normas.
+# *   Compreender o valor da IA Generativa na auditoria e gestão de documentos normativos.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# Este notebook demonstra um caso de uso prático e valioso do LangChain: a análise semântica de documentos. Ao aprender a aplicar o LangChain para comparar normas, você estará adquirindo habilidades que podem ser aplicadas em diversas outras áreas, como análise de contratos, monitoramento de regulamentações e gestão de conhecimento. Dominar essa técnica o posiciona como um profissional inovador e capaz de extrair o máximo potencial da IA Generativa no contexto empresarial.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###

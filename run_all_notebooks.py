@@ -2,6 +2,7 @@ import os
 import glob
 import nbformat
 import re
+import traceback
 from nbconvert import PythonExporter
 from nbconvert.preprocessors import ExecutePreprocessor, ClearOutputPreprocessor
 from dotenv import load_dotenv
@@ -11,6 +12,25 @@ env_path = os.path.join("scripts", ".env")
 load_dotenv(env_path)
 
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+# Ensure Jupyter/IPython runtime dirs are writable inside the workspace
+WORKSPACE_RUNTIME_DIR = os.path.join(os.getcwd(), ".jupyter_runtime")
+WORKSPACE_IPYTHON_DIR = os.path.join(os.getcwd(), ".ipython")
+WORKSPACE_JUPYTER_CONFIG_DIR = os.path.join(os.getcwd(), ".jupyter_config")
+WORKSPACE_JUPYTER_DATA_DIR = os.path.join(os.getcwd(), ".jupyter_data")
+
+for _dir in [
+    WORKSPACE_RUNTIME_DIR,
+    WORKSPACE_IPYTHON_DIR,
+    WORKSPACE_JUPYTER_CONFIG_DIR,
+    WORKSPACE_JUPYTER_DATA_DIR,
+]:
+    os.makedirs(_dir, exist_ok=True)
+
+os.environ["IPYTHONDIR"] = WORKSPACE_IPYTHON_DIR
+os.environ["JUPYTER_RUNTIME_DIR"] = WORKSPACE_RUNTIME_DIR
+os.environ["JUPYTER_CONFIG_DIR"] = WORKSPACE_JUPYTER_CONFIG_DIR
+os.environ["JUPYTER_DATA_DIR"] = WORKSPACE_JUPYTER_DATA_DIR
 
 def patch_cell_source(source):
     """
@@ -30,6 +50,18 @@ def patch_cell_source(source):
     
     # 3. Handle Key Variables
     source = source.replace('OPENAI_API_KEY', 'GOOGLE_API_KEY')
+
+    # 3.1 Normalize hardcoded GOOGLE_API_KEY assignments to env usage
+    source = re.sub(
+        r'os\.environ\[\s*["\']GOOGLE_API_KEY["\']\s*\]\s*=\s*["\'].*?["\']',
+        'os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")',
+        source,
+    )
+    source = re.sub(
+        r'GOOGLE_API_KEY\s*=\s*["\'].*?["\']',
+        'GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")',
+        source,
+    )
     
     # 4. Patch blocking calls safely to avoid IndentationErrors
     # Instead of commenting out, we replace the call with None or a dummy string
@@ -131,6 +163,7 @@ def process_notebook(nb_path):
         
     except Exception as e:
         print(f"  [!] Fatal error: {e}")
+        print(traceback.format_exc())
         return False
 
 def main():

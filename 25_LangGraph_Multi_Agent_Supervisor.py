@@ -10,6 +10,58 @@
 # - Criar um nó Supervisor que decide quem chamar.
 # - Criar o grafo de roteamento.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 25. LangGraph: Supervisor Multi-Agente
+# 
+# Este notebook explora um dos padrões mais avançados na construção de agentes inteligentes: a orquestração de múltiplos agentes especialistas sob a supervisão de um agente coordenador. Imagine ter uma equipe de especialistas, cada um com habilidades únicas (como pesquisa, redação e revisão), trabalhando em conjunto para resolver um problema complexo. Este notebook demonstra como construir essa equipe e como o Supervisor direciona o fluxo de trabalho para alcançar o objetivo final.
+# 
+# **Conceitos Chave:**
+# 
+# *   **Agentes Especialistas:** Módulos de código (neste caso, chains simples) projetados para realizar tarefas específicas, como pesquisa na web ou redação de textos.
+# *   **Supervisor:** Um agente central que toma decisões sobre qual agente especialista deve ser ativado em seguida, com base no progresso da tarefa e nas informações disponíveis. Ele atua como um maestro, garantindo que cada membro da equipe contribua no momento certo.
+# *   **LangGraph:** Uma ferramenta poderosa do LangChain que permite definir fluxos de trabalho complexos como grafos. Isso facilita a criação de pipelines de agentes interconectados e a gestão do estado da aplicação.
+# *   **Estado:** A informação compartilhada entre os agentes, contendo dados como a tarefa original, os resultados da pesquisa e o texto final em desenvolvimento. O estado é atualizado a cada iteração do grafo.
+# 
+# **Objetivos de Aprendizado:**
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Definir agentes especialistas com funções específicas.
+# *   Implementar um supervisor capaz de tomar decisões sobre o fluxo de trabalho.
+# *   Construir um grafo LangGraph para orquestrar a interação entre os agentes e o supervisor.
+# *   Executar o grafo e observar como os agentes colaboram para completar uma tarefa complexa.
+# *   Compreender a importância da gestão de estado em aplicações multi-agente.
+# 
+# **Importância no Ecossistema LangChain:**
+# 
+# A capacidade de construir sistemas multi-agente é fundamental para resolver problemas complexos que exigem especialização e colaboração. Este notebook demonstra um padrão avançado que permite criar aplicações de IA mais robustas, flexíveis e adaptáveis. Dominar este padrão é um passo importante para se tornar um especialista em LangChain e IA Generativa. A orquestração de agentes é crucial para tarefas como:
+# 
+# *   **Criação de conteúdo complexo:** Geração de artigos, relatórios e apresentações que exigem pesquisa, redação e revisão.
+# *   **Resolução de problemas técnicos:** Diagnóstico de falhas, desenvolvimento de soluções e implementação de código.
+# *   **Automação de processos de negócios:** Coordenação de diferentes etapas em um fluxo de trabalho, envolvendo múltiplos atores e sistemas.
+# 
+# Prepare-se para mergulhar no mundo dos agentes inteligentes e descobrir como o LangGraph pode te ajudar a construir aplicações de IA de última geração!
+# 
+# ## 1. Definindo os Agentes Especialistas
+# 
+# Para simplificar, usaremos chains simples como "agentes".
+# 
+# ## 2. O Supervisor
+# 
+# Ele decide qual o próximo passo. Usamos `with_structured_output` para forçar ele a escolher um dos agentes ou FINISH.
+# 
+# ## 3. Montando o Grafo
+# 
+# Estado e roteamento.
+# 
+# ## 4. Executando o Time
+# 
+# Vamos pedir para escrever sobre Python.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -23,7 +75,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 import os

@@ -10,6 +10,47 @@
 # 3. **Avaliação**: Como rodar testes automatizados nos seus datasets.
 # 
 
+# # Explicação Detalhada do Assunto
+# 
+# # Introdução ao LangSmith
+# 
+# Bem-vindo ao fascinante mundo do LangSmith, a plataforma essencial para transformar seus aplicativos baseados em LLM de protótipos promissores em soluções robustas e confiáveis. Neste notebook, embarcaremos em uma jornada prática para desvendar os segredos do LangSmith e capacitá-lo a dominar o teste, a depuração e a avaliação de seus projetos de IA Generativa.
+# 
+# ## Resumo Executivo
+# 
+# Este notebook serve como um guia introdutório ao LangSmith, explorando seus conceitos fundamentais e demonstrando como utilizá-lo para aprimorar a qualidade e a confiabilidade de seus aplicativos de linguagem. Através de exemplos práticos, você aprenderá a rastrear execuções, criar datasets para testes e avaliar o desempenho de seus modelos.
+# 
+# ## Conceitos Chave
+# 
+# Antes de mergulharmos no código, é importante compreender alguns conceitos-chave que permeiam o LangSmith e o ecossistema LangChain:
+# 
+# *   **Tracing:** O tracing permite visualizar o fluxo de execução do seu aplicativo LangChain, desde a entrada até a saída final, revelando insights valiosos sobre o comportamento do seu modelo e identificando gargalos de desempenho. Pense nisso como um raio-x do seu aplicativo!
+# *   **Datasets:** Datasets são coleções de exemplos cuidadosamente selecionados que representam os diferentes cenários que seu aplicativo precisa lidar. Eles são cruciais para testar a robustez e a precisão do seu modelo em uma variedade de situações.
+# *   **Avaliação:** A avaliação é o processo de medir o desempenho do seu modelo em relação a um dataset, fornecendo métricas quantitativas e insights qualitativos que ajudam a identificar áreas de melhoria.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Configurar o LangSmith e ativar o tracing em seus aplicativos LangChain.
+# *   Navegar na interface do LangSmith e interpretar os traces de execução.
+# *   Criar datasets personalizados para testar e avaliar seus modelos.
+# *   Executar avaliações automatizadas e analisar os resultados no painel do LangSmith.
+# *   Compreender o papel do LangSmith no ciclo de vida de desenvolvimento de aplicativos de IA Generativa.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# O LangSmith é uma peça fundamental do ecossistema LangChain, preenchendo uma lacuna crítica no desenvolvimento de aplicativos baseados em LLM. Ao fornecer ferramentas poderosas para teste, depuração e avaliação, o LangSmith permite que você:
+# 
+# *   **Reduza o tempo de desenvolvimento:** Identifique e corrija erros mais rapidamente, acelerando o ciclo de desenvolvimento.
+# *   **Melhore a qualidade do seu aplicativo:** Garanta que seu modelo funcione de forma confiável e precisa em uma variedade de cenários.
+# *   **Aumente a confiança:** Valide o desempenho do seu modelo e tome decisões informadas sobre como otimizá-lo.
+# 
+# Prepare-se para dominar o LangSmith e elevar seus projetos de IA Generativa a um novo patamar! Vamos começar explorando o tracing básico.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -23,7 +64,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 import os

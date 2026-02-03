@@ -7,6 +7,44 @@
 # 
 # **Objetivo:** Usar `.with_structured_output()` para extrair informações complexas.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 22. Saída Estruturada com LangChain e Pydantic
+# 
+# Este notebook explora como instruir modelos de linguagem (LLMs) a retornarem dados formatados e validados usando Pydantic, uma biblioteca Python para validação de dados. O objetivo é garantir a confiabilidade e a consistência dos dados gerados, tornando-os adequados para automações e integrações com outros sistemas.
+# 
+# **Resumo Executivo:**
+# 
+# Em cenários onde a precisão e a estrutura dos dados são cruciais, como na extração de informações para sistemas de CRM ou na criação de agentes automatizados, a capacidade de obter saídas estruturadas de LLMs é fundamental. Este notebook demonstra como usar a LangChain e o Pydantic para alcançar esse objetivo, transformando texto não estruturado em dados validados e prontos para uso.
+# 
+# **Conceitos Chave:**
+# 
+# *   **LLMs (Large Language Models):** Modelos de linguagem de grande escala, capazes de gerar texto, traduzir idiomas e responder a perguntas.
+# *   **Pydantic:** Uma biblioteca Python para validação e gerenciamento de dados. Define estruturas de dados (schemas) e valida os dados de acordo com esses schemas.
+# *   **Function Calling:** Um recurso (disponível em algumas APIs de LLMs, como a OpenAI) que permite ao modelo retornar uma função a ser executada, juntamente com os argumentos necessários. A LangChain utiliza este mecanismo para garantir o formato da saída.
+# *   **Schema:** Uma definição formal da estrutura dos dados, incluindo os tipos de dados esperados para cada campo.
+# 
+# **Objetivos de Aprendizado:**
+# 
+# Após completar este notebook, você será capaz de:
+# 
+# *   Definir schemas de dados usando Pydantic.
+# *   Configurar um LLM da LangChain para retornar saídas estruturadas de acordo com um schema Pydantic.
+# *   Extrair informações de texto não estruturado e convertê-las em objetos Pydantic validados.
+# *   Entender as vantagens de usar Pydantic para validação de dados em comparação com a análise de JSON puro.
+# *   Aplicar os conceitos aprendidos para criar agentes e automações mais confiáveis.
+# 
+# **Importância no Ecossistema LangChain:**
+# 
+# A capacidade de obter saídas estruturadas e validadas é crucial para construir aplicações LangChain robustas e confiáveis. Sem essa validação, os dados gerados pelos LLMs podem ser inconsistentes ou incorretos, levando a erros e comportamentos inesperados. Ao integrar o Pydantic com a LangChain, podemos garantir que os dados utilizados em nossos pipelines de IA sejam precisos, consistentes e adequados para as tarefas a serem executadas. Isso é especialmente importante ao construir agentes que interagem com APIs e outros sistemas externos.
+# 
+# ## 1. Definindo o Schema
+# 
+# Imagine que queremos extrair informações de um currículo...
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -20,7 +58,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 import os

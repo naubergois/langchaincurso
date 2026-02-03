@@ -9,6 +9,45 @@
 # - Entender `StateGraph`, `Nodes` e `Edges`.
 # - Criar um fluxo com condicional (Router).
 
+# # Explicação Detalhada do Assunto
+# 
+# # 23. Introdução ao LangGraph: Fluxos Cíclicos
+# 
+# Este notebook marca uma transição crucial no nosso aprendizado de LangChain, nos levando além das Chains lineares (DAGs - Directed Acyclic Graphs) para explorar fluxos de trabalho mais dinâmicos e complexos: os **fluxos cíclicos**. Prepare-se para construir aplicações de IA que podem aprender, iterar e refinar suas respostas com base em feedback contínuo.
+# 
+# ## Resumo Executivo
+# 
+# Neste notebook, vamos mergulhar no LangGraph e aprender como construir grafos de execução que permitem loops, ou seja, fluxos de trabalho que podem retornar a nós anteriores para refinamento.  Vamos construir um exemplo prático onde um agente gera uma resposta, um crítico a avalia e, se necessário, o agente refina a resposta em um ciclo iterativo até atingir um nível de qualidade aceitável.
+# 
+# ## Conceitos Chave
+# 
+# Para entender completamente este notebook, é importante estar familiarizado com os seguintes conceitos:
+# 
+# *   **Chains (Cadeias)**: Sequências de chamadas a LLMs (Large Language Models) ou outras utilidades, executadas em uma ordem específica. Até agora, nossas Chains eram lineares, com um fluxo unidirecional.
+# *   **DAG (Directed Acyclic Graph)**: Um grafo direcionado sem ciclos. As Chains lineares que vimos até agora são DAGs.
+# *   **Fluxos Cíclicos**: Fluxos de trabalho que permitem loops, ou seja, a capacidade de retornar a nós anteriores para refinamento ou iteração. Isso é fundamental para construir aplicações que podem aprender e melhorar ao longo do tempo.
+# *   **Estado (State)**: Um dicionário (ou objeto Pydantic) compartilhado entre todos os nós do grafo. Ele armazena informações relevantes para o fluxo de trabalho, como a pergunta original, a resposta gerada e o número de revisões.
+# *   **Nós (Nodes)**: Funções Python simples que recebem o estado e retornam uma atualização para ele. Cada nó representa uma etapa no fluxo de trabalho, como gerar uma resposta ou avaliar sua qualidade.
+# *   **Arestas (Edges)**: Conexões entre os nós do grafo. Elas definem o fluxo de execução e podem ser condicionais, permitindo que o fluxo de trabalho se adapte com base no estado atual.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Compreender o conceito de fluxos cíclicos e sua importância na construção de aplicações de IA mais inteligentes.
+# *   Definir o estado compartilhado entre os nós do grafo.
+# *   Criar nós que executam tarefas específicas e atualizam o estado.
+# *   Implementar lógica condicional para controlar o fluxo de execução do grafo.
+# *   Montar um grafo LangGraph com nós e arestas, definindo um fluxo de trabalho cíclico.
+# *   Executar o grafo e observar como ele itera para refinar a resposta.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# A capacidade de criar fluxos cíclicos é um passo fundamental para construir aplicações de IA generativa mais avançadas e adaptativas.  LangGraph fornece as ferramentas necessárias para orquestrar esses fluxos complexos, permitindo que você crie agentes que podem aprender com seus erros, refinar suas respostas e se adaptar a novas situações.  Dominar LangGraph abre um mundo de possibilidades para construir aplicações de IA mais poderosas e eficazes.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -22,7 +61,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 import os

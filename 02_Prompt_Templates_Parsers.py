@@ -10,6 +10,44 @@
 # - Usar parsers para limpar a saída.
 # - Criar nossa primeira Chain usando o operador `|`.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 02. Prompt Templates e Output Parsers
+# 
+# Bem-vindo ao segundo notebook da nossa jornada LangChain! Agora que já aprendemos a interagir com modelos de linguagem, é hora de aprimorar a forma como estruturamos nossas solicitações (prompts) e como processamos as respostas geradas. Neste notebook, vamos explorar dois conceitos cruciais: **Prompt Templates** e **Output Parsers**.
+# 
+# ## Resumo Executivo
+# 
+# Este notebook é um guia prático para dominar a arte de criar prompts eficazes e de extrair informações valiosas das respostas dos modelos de linguagem. Através de exemplos claros e concisos, você aprenderá a utilizar `Prompt Templates` para organizar e reutilizar seus prompts, e `Output Parsers` para formatar as respostas dos modelos de acordo com suas necessidades.
+# 
+# ## Conceitos Chave
+# 
+# *   **Prompt Templates**: São modelos que permitem definir a estrutura de um prompt, incluindo variáveis que podem ser preenchidas dinamicamente. Em vez de construir prompts manualmente concatenando strings, você usará templates para criar prompts mais organizados, legíveis e reutilizáveis.
+# *   **Output Parsers**: São ferramentas que permitem processar e formatar as respostas dos modelos de linguagem. Eles extraem o conteúdo relevante da resposta, convertem-no para o formato desejado (por exemplo, string, lista, JSON) e garantem que as informações sejam apresentadas de forma consistente.
+# *   **LCEL (LangChain Expression Language)**: É a linguagem de expressão do LangChain que permite conectar diferentes componentes (como Prompt Templates, modelos de linguagem e Output Parsers) em um fluxo de trabalho coeso, utilizando o operador "pipe" (`|`).
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Criar e utilizar `Prompt Templates` para estruturar seus prompts de forma eficiente.
+# *   Aplicar `Output Parsers` para extrair e formatar as respostas dos modelos de linguagem.
+# *   Construir `Chains` utilizando a `LangChain Expression Language (LCEL)` para conectar diferentes componentes em um fluxo de trabalho.
+# *   Desenvolver aplicações práticas que utilizam prompts dinâmicos e processamento de saída.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# Dominar `Prompt Templates` e `Output Parsers` é fundamental para construir aplicações LangChain robustas e escaláveis. Eles permitem que você:
+# 
+# *   **Otimize a interação com os modelos de linguagem**: Prompts bem estruturados levam a respostas mais precisas e relevantes.
+# *   **Automatize o processamento de informações**: Extrair e formatar as respostas dos modelos de forma consistente economiza tempo e evita erros.
+# *   **Crie fluxos de trabalho complexos**: Conectar diferentes componentes com a LCEL permite construir aplicações sofisticadas que resolvem problemas reais.
+# 
+# Prepare-se para elevar suas habilidades LangChain a um novo patamar! Vamos começar a explorar o poder dos Prompt Templates e Output Parsers.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###

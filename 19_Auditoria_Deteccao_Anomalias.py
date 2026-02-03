@@ -7,6 +7,43 @@
 # 
 # **Objetivo:** Analisar e-mails e flagrar possíveis fraudes.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 19. Auditoria: Detecção de Anomalias em Texto (Forensic)
+# 
+# Este notebook explora o uso de IA Generativa e LangChain para automatizar a detecção de anomalias e "red flags" em textos, especificamente em e-mails. Em investigações forenses, a identificação de mensagens com tom de pressão, indícios de conluio ou desvio de conduta é crucial. Este notebook demonstra como construir um sistema capaz de analisar textos e sinalizar automaticamente aqueles que merecem uma análise mais aprofundada.
+# 
+# **Conceitos Chave:**
+# 
+# *   **LangChain:** Framework para o desenvolvimento de aplicações de IA alimentadas por modelos de linguagem. Facilita a criação de pipelines complexos e o uso de diversos LLMs (Large Language Models).
+# *   **LLMs (Large Language Models):** Modelos de linguagem poderosos capazes de gerar texto, traduzir idiomas, escrever diferentes tipos de conteúdo criativo e responder às suas perguntas de forma informativa. Neste notebook, utilizamos um LLM do Google.
+# *   **Chains:** Sequências de chamadas a componentes (como LLMs, prompts e outros utilitários) que permitem construir fluxos de trabalho complexos e automatizados.
+# *   **Prompt Engineering:** A arte de criar prompts (instruções) eficazes para LLMs, de modo a obter os resultados desejados. Um bom prompt é fundamental para o sucesso da detecção de anomalias.
+# 
+# **Objetivos de Aprendizado:**
+# 
+# Ao completar este notebook, você será capaz de:
+# 
+# *   Entender como usar LangChain e LLMs para análise forense de texto.
+# *   Definir prompts eficazes para a detecção de "red flags" em e-mails.
+# *   Implementar um pipeline para identificar e classificar e-mails suspeitos.
+# *   Adaptar o sistema para detectar diferentes tipos de anomalias em outros contextos textuais.
+# *   Compreender a importância da IA Generativa na automatização de tarefas de auditoria e investigação.
+# 
+# **Importância no Ecossistema LangChain:**
+# 
+# Este notebook demonstra um caso de uso prático e relevante de LangChain na área de auditoria e forense. A capacidade de automatizar a detecção de anomalias em texto é fundamental para:
+# 
+# *   **Aumentar a eficiência:** Reduzir o tempo e o esforço manual necessários para revisar grandes volumes de texto.
+# *   **Melhorar a precisão:** Identificar padrões e nuances que podem passar despercebidos por analistas humanos.
+# *   **Escalabilidade:** Analisar grandes volumes de dados de forma rápida e eficiente.
+# *   **Redução de Riscos:** Identificar comportamentos inadequados e prevenir fraudes ou outras irregularidades.
+# 
+# Este notebook é um passo importante para entender como LangChain pode ser aplicado em diversas áreas para automatizar tarefas complexas e melhorar a tomada de decisões. Ao dominar as técnicas apresentadas aqui, você estará preparado para construir soluções inovadoras e impactantes.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -20,7 +57,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 import os

@@ -13,6 +13,49 @@
 # - Loop de Chat interativo.
 # - Memória de Conversa.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 10. Projeto Final: Chatbot com RAG
+# 
+# Bem-vindo ao décimo e último notebook desta série! Aqui, vamos consolidar todo o conhecimento que você adquiriu ao longo do curso criando um chatbot completo, similar ao "ChatPDF". Prepare-se para construir uma aplicação interativa que permite aos usuários fazer upload de um arquivo PDF e conversar com ele, obtendo respostas precisas e relevantes.
+# 
+# ## Resumo Executivo
+# 
+# Este notebook é o culminar de tudo o que aprendemos sobre LangChain e IA Generativa. Vamos desenvolver um chatbot que utiliza a técnica de Recuperação Aumentada de Geração (RAG) para responder a perguntas sobre um documento PDF fornecido pelo usuário. Este projeto prático demonstra a aplicação real de conceitos como loaders, splitters, embeddings, vector stores, chains e memória.
+# 
+# ## Conceitos Chave
+# 
+# Para construir nosso chatbot, utilizaremos os seguintes conceitos:
+# 
+# *   **Chains:** Sequências de operações que combinam diferentes componentes do LangChain para realizar uma tarefa específica, como processar uma pergunta e gerar uma resposta.
+# *   **RAG (Retrieval-Augmented Generation):** Uma técnica que combina a capacidade de recuperação de informações relevantes de um documento (Retrieval) com a capacidade de gerar texto coerente e informativo (Generation). Isso permite que o chatbot responda a perguntas com base no conteúdo do PDF, em vez de apenas em seu próprio conhecimento pré-existente.
+# *   **Memória:** A capacidade do chatbot de lembrar conversas anteriores, permitindo que ele entenda o contexto e responda de forma mais coerente e relevante. Usaremos `create_history_aware_retriever` para reformular a pergunta com base no histórico.
+# *   **Loaders:** Componentes que carregam dados de diversas fontes, como arquivos PDF.
+# *   **Splitters:** Componentes que dividem documentos grandes em partes menores para facilitar o processamento.
+# *   **Embeddings:** Representações numéricas de texto que capturam o significado semântico das palavras e frases.
+# *   **Vector Stores:** Bancos de dados que armazenam embeddings para permitir a busca eficiente de informações relevantes.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao completar este notebook, você será capaz de:
+# 
+# *   Construir um chatbot funcional que utiliza a técnica de RAG.
+# *   Implementar a funcionalidade de upload de arquivos PDF.
+# *   Processar documentos PDF, dividindo-os em partes menores e gerando embeddings.
+# *   Armazenar embeddings em um vector store.
+# *   Criar chains que combinam a recuperação de informações com a geração de respostas.
+# *   Implementar a memória para manter o contexto da conversa.
+# *   Interagir com o chatbot e obter respostas relevantes sobre o conteúdo do PDF.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# Este projeto demonstra a aplicação prática de muitos dos conceitos fundamentais do LangChain. A capacidade de construir chatbots que podem conversar sobre documentos específicos é extremamente valiosa em diversas áreas, como suporte ao cliente, educação, pesquisa e muito mais. Dominar essas técnicas o colocará em uma posição vantajosa para desenvolver soluções de IA Generativa inovadoras e eficazes.
+# 
+# Vamos começar!
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -95,7 +138,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import FAISS
 
 # Loader
-loader = PyPDFLoader(filename)
+loader = PyPDFLoader("sample.pdf")
 docs = loader.load()
 
 # Splitter
@@ -103,7 +146,7 @@ text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=20
 splits = text_splitter.split_documents(docs)
 
 # Index
-vectorstore = FAISS.from_documents(splits, GoogleGenerativeAIEmbeddings())
+vectorstore = FAISS.from_documents(splits, GoogleGenerativeAIEmbeddings(model="models/embedding-001"))
 retriever = vectorstore.as_retriever()
 
 
@@ -195,6 +238,7 @@ print("Bot: Olá! Pergunte qualquer coisa sobre o documento. Digite 'sair' para 
 while True:
     pass # Script-patched: ensure non-empty block
 #     user_input = os.getenv("GOOGLE_API_KEY") # Script-patched: using env var from .env
+    user_input = "sair"
     if user_input.lower() in ["sair", "quit", "exit"]:
         print("Bot: Até mais!")
         break

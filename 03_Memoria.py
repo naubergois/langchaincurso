@@ -9,6 +9,45 @@
 # - Entender como funciona a memória no LCEL.
 # - Usar `RunnableWithMessageHistory` para gerenciar histórico automaticamente.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 03. Memória
+# 
+# Bem-vindo(a) ao notebook sobre memória em LangChain! Este é um pilar fundamental para a construção de aplicações de IA generativa conversacionais, como chatbots, que precisam manter o contexto das interações para fornecer respostas relevantes e coerentes.
+# 
+# ## Resumo Executivo
+# 
+# Neste notebook, exploraremos o conceito de memória em modelos de linguagem e como implementá-la utilizando LangChain. Veremos o problema da "statelessness" (ausência de estado) dos LLMs e aprenderemos a adicionar histórico de conversas às nossas aplicações, permitindo que elas "se lembrem" do que foi dito anteriormente. Utilizaremos a abordagem moderna do LangChain, com `RunnableWithMessageHistory`, para gerenciar o histórico de forma eficiente.
+# 
+# ## Conceitos Chave
+# 
+# Para um melhor aproveitamento deste material, é importante ter uma compreensão básica dos seguintes conceitos:
+# 
+# *   **LLMs (Large Language Models):** Modelos de linguagem de grande escala, como o Gemini, que são a base da IA generativa.
+# *   **Statelessness:** A característica de LLMs de não manterem estado, ou seja, cada interação é independente das anteriores.
+# *   **Chains:** Sequências de operações (prompts, LLMs, parsers) que definem o fluxo de processamento em LangChain.
+# *   **Memória:** A capacidade de um sistema de IA de reter informações sobre interações passadas e usá-las para influenciar interações futuras.
+# *   **`RunnableWithMessageHistory`:** Uma classe do LangChain que facilita a adição de histórico de mensagens a uma chain.
+# *   **`ChatMessageHistory`:** Uma classe para armazenar o histórico de mensagens em memória.
+# *   **`MessagesPlaceholder`:** Um placeholder em um prompt que permite injetar o histórico de mensagens.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Compreender o problema da falta de memória em LLMs.
+# *   Implementar a memória em suas aplicações LangChain utilizando `RunnableWithMessageHistory`.
+# *   Gerenciar o histórico de conversas com `ChatMessageHistory`.
+# *   Utilizar `MessagesPlaceholder` para injetar o histórico em seus prompts.
+# *   Construir chatbots que "se lembram" de interações passadas, fornecendo respostas mais contextuais e relevantes.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# A memória é um componente essencial para a criação de aplicações de IA generativa avançadas. Sem memória, os chatbots são incapazes de manter conversas significativas e personalizadas. Este notebook fornece o conhecimento e as ferramentas necessárias para superar essa limitação, permitindo que você crie aplicações mais inteligentes e interativas. Dominar este conceito é crucial para aproveitar ao máximo o poder do LangChain e construir soluções de IA generativa de ponta. Vamos começar!
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###

@@ -12,6 +12,67 @@
 # 
 # ---
 
+# # Explicação Detalhada do Assunto
+# 
+# # 27. ReAct: A Abordagem LangChain
+# 
+# Bem-vindo! Neste notebook, vamos mergulhar na implementação do padrão ReAct (Reasoning and Acting) utilizando o LangChain. Se você construiu um agente "na mão" no notebook anterior, prepare-se para ver como o LangChain simplifica drasticamente o processo, permitindo a criação de sistemas complexos com muito mais facilidade.
+# 
+# **Resumo Executivo:**
+# 
+# Este notebook demonstra como utilizar o LangChain para construir um agente ReAct eficaz. Exploraremos a definição de ferramentas, a utilização de prompts pré-definidos do LangChain Hub e a criação e execução do agente. O foco é mostrar como o LangChain abstrai a complexidade da construção de agentes, tornando o processo mais acessível e eficiente.
+# 
+# **Conceitos Chave:**
+# 
+# *   **ReAct (Reasoning and Acting):** Um padrão para agentes de IA que combina raciocínio (reasoning) para gerar planos e ações (acting) para interagir com o ambiente.
+# *   **LangChain Hub:** Um repositório de prompts, chains e agentes pré-construídos e testados pela comunidade, que podem ser facilmente reutilizados.
+# *   **Ferramentas (Tools):** Funções específicas que o agente pode utilizar para interagir com o mundo externo, como buscar informações na internet ou calcular o tamanho de uma palavra.
+# *   **`@tool` Decorator:** Uma funcionalidade do LangChain que simplifica a criação de ferramentas, injetando automaticamente a documentação da função no prompt do agente.
+# *   **AgentExecutor:** O componente do LangChain responsável por executar o loop de raciocínio e ação do agente.
+# 
+# **Objetivos de Aprendizado:**
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Definir e integrar ferramentas personalizadas em um agente LangChain utilizando o decorador `@tool`.
+# *   Utilizar prompts pré-definidos do LangChain Hub para acelerar o desenvolvimento de agentes.
+# *   Construir um agente ReAct completo utilizando as funcionalidades do LangChain.
+# *   Compreender o fluxo de execução de um agente LangChain, incluindo o raciocínio, a seleção de ferramentas e a interação com o ambiente.
+# *   Interpretar o output detalhado (verbose) do agente para entender seu processo de tomada de decisão.
+# 
+# **Importância no Ecossistema LangChain:**
+# 
+# O padrão ReAct é fundamental para a construção de agentes inteligentes e capazes de resolver problemas complexos. O LangChain fornece as ferramentas e abstrações necessárias para implementar o ReAct de forma eficiente, permitindo que você se concentre na lógica de negócio em vez de se preocupar com os detalhes de implementação. Dominar a construção de agentes ReAct com LangChain é um passo essencial para aproveitar ao máximo o poder da IA generativa.
+# 
+# ## 1. Definindo Ferramentas no LangChain
+# 
+# O LangChain facilita a criação de ferramentas robustas usando o decorador `@tool`. O docstring da função é **CRUCIAL**, pois ele é injetado no prompt para o LLM saber como usar a ferramenta!
+# 
+# ## 2. O Prompt do LangChain Hub
+# 
+# Ao invés de escrevermos o prompt template gigante (como no notebook anterior), vamos puxar o padrão da comunidade testado em batalha.
+# 
+# O prompt `hwchase17/react` é o padrão para o ReAct.
+# 
+# ### Análise do Prompt
+# 
+# Note que ele possui variáveis como `{tools}`, `{tool_names}` e `{agent_scratchpad}`.
+# 
+# *   **{tools}**: Descrições das ferramentas (automático).
+# *   **{tool_names}**: Lista de nomes das ferramentas (automático).
+# *   **{agent\_scratchpad}**: Histórico das interações do agente (automático).
+# 
+# ## 3. Criando o Agente (Agent Construction)
+# 
+# Vamos usar `create_react_agent`. O "Executor" é quem roda o loop (o equivalente ao nosso `run_agent_step` manual).
+# 
+# ## 4. Rodando o Agente
+# 
+# Vamos ver o `verbose=True` em ação, mostrando o pensamento.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -25,7 +86,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 # !pip install -q langchain langchain-openai langchainhub google-search-results numexpr # Script-patched

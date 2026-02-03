@@ -7,6 +7,40 @@
 # 
 # **Objetivo:** Classificar descrições de falhas de controle e gerar uma justificativa para a nota.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 14. Auditoria: Classificação Automática de Riscos
+# 
+# Este notebook explora a aplicação de Inteligência Artificial Generativa e LangChain para automatizar uma etapa crucial no processo de auditoria: a classificação de riscos. Tradicionalmente, a classificação de apontamentos de auditoria em categorias de risco (Alto, Médio, Baixo) é uma tarefa manual e demorada. Aqui, demonstraremos como LLMs (Large Language Models) podem ser utilizados para realizar essa classificação de forma eficiente e precisa, permitindo que auditores seniores foquem em problemas de maior impacto.
+# 
+# ## Conceitos Chave
+# 
+# Para entender o que será abordado, é importante ter clareza sobre alguns conceitos-chave:
+# 
+# *   **LLMs (Large Language Models):** Modelos de linguagem treinados em grandes volumes de texto, capazes de gerar texto, traduzir idiomas, escrever diferentes tipos de conteúdo criativo e responder às suas perguntas de forma informativa. Neste contexto, eles são utilizados para analisar descrições de apontamentos de auditoria e inferir o nível de risco associado.
+# *   **Prompt Engineering:** A arte de criar prompts (instruções) claros e eficazes para direcionar o LLM a produzir os resultados desejados. Um prompt bem elaborado é crucial para garantir a precisão e a relevância da classificação de riscos.
+# *   **LangChain:** Um framework para construir aplicações baseadas em LLMs. Ele oferece ferramentas e abstrações que facilitam a criação de fluxos de trabalho complexos, como a definição de prompts, a integração com diferentes modelos de linguagem e a criação de chains (cadeias) de operações.
+# *   **Chains:** Sequências de chamadas a LLMs ou outras utilidades. Neste notebook, utilizaremos chains para orquestrar o processo de classificação de riscos, desde a entrada do texto até a saída da classificação.
+# *   **Tagging Chain:** Uma funcionalidade específica do LangChain projetada para categorizar dados através da atribuição de "tags" (rótulos). É uma alternativa simplificada para a classificação em cenários onde apenas a categorização é necessária.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Compreender como os LLMs podem ser aplicados para automatizar a classificação de riscos em auditoria.
+# *   Definir uma matriz de riscos clara e concisa para orientar o LLM na classificação.
+# *   Criar prompts eficazes para direcionar o LLM a classificar apontamentos de auditoria com base no nível de risco.
+# *   Utilizar LangChain para construir chains de classificação de riscos, integrando prompts e LLMs.
+# *   Avaliar a precisão e a eficácia da classificação automática de riscos em cenários reais.
+# *   Explorar a alternativa do `create_tagging_chain` do LangChain para tarefas de categorização simples.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# A capacidade de automatizar a classificação de riscos é um exemplo poderoso de como o LangChain pode ser utilizado para otimizar processos de negócios. Este notebook demonstra como o framework pode ser aplicado em um contexto específico (auditoria), mas os princípios e as técnicas aprendidas podem ser generalizados para outras áreas, como análise de sentimentos, triagem de tickets de suporte e detecção de fraudes. Dominar essa habilidade é fundamental para qualquer profissional que deseja construir aplicações inteligentes e eficientes com LLMs e LangChain.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###

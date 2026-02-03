@@ -12,6 +12,57 @@
 # 
 # ---
 
+# # Explicação Detalhada do Assunto
+# 
+# # 26. Engenharia de Prompt para Agentes: O Padrão ReAct
+# 
+# Bem-vindo(a) a este mergulho profundo no mundo dos Agentes de IA e, mais especificamente, no padrão **ReAct (Reasoning + Acting)**. Este notebook é um guia prático para entender e implementar a lógica por trás dos agentes, desconstruindo a magia e revelando os mecanismos que os impulsionam. Em vez de simplesmente usar frameworks prontos, vamos construir um agente ReAct do zero, explorando cada componente e entendendo como eles interagem.
+# 
+# ## Resumo Executivo
+# 
+# Neste notebook, você irá:
+# 
+# *   Compreender a teoria por trás do padrão ReAct e por que ele é essencial para a construção de agentes inteligentes.
+# *   Analisar a anatomia de um prompt ReAct, identificando os elementos cruciais que o compõem.
+# *   Implementar ferramentas simuladas para que o agente possa interagir com o mundo externo.
+# *   Construir manualmente o loop ReAct, observando como o agente raciocina, age e aprende com suas interações.
+# *   Analisar o prompting e entender como a "inteligência" do agente é derivada do design cuidadoso do prompt.
+# 
+# ## Conceitos Chave
+# 
+# Para tirar o máximo proveito deste notebook, é importante ter uma compreensão básica dos seguintes conceitos:
+# 
+# *   **LLMs (Large Language Models):** Modelos de linguagem de grande escala, como o Gemini, que são a base para a geração de texto e raciocínio.
+# *   **Agentes:** Sistemas de IA que podem interagir com o mundo externo, tomar decisões e executar ações para atingir um objetivo.
+# *   **Prompting:** A arte de criar prompts eficazes para guiar o LLM a gerar as respostas desejadas.
+# *   **Ferramentas:** Funções ou APIs que os agentes podem usar para interagir com o mundo externo (e.g., busca na Wikipedia, calculadora).
+# *   **Reasoning (Raciocínio):** A capacidade do agente de pensar sobre o problema, planejar suas ações e justificar suas decisões.
+# *   **Acting (Ação):** A capacidade do agente de executar ações no mundo externo usando as ferramentas disponíveis.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Explicar o padrão ReAct e seus benefícios em relação aos LLMs isolados.
+# *   Identificar os componentes essenciais de um prompt ReAct.
+# *   Criar ferramentas simples para que um agente interaja com o mundo externo.
+# *   Implementar o loop ReAct manualmente, controlando o fluxo de raciocínio e ação do agente.
+# *   Analisar e otimizar prompts ReAct para melhorar o desempenho do agente.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# O padrão ReAct é um dos pilares da construção de agentes inteligentes no LangChain. Compreender como ele funciona é fundamental para:
+# 
+# *   Construir agentes mais robustos e eficientes.
+# *   Personalizar o comportamento dos agentes para atender às suas necessidades específicas.
+# *   Depurar e solucionar problemas em agentes existentes.
+# *   Explorar técnicas mais avançadas de engenharia de prompt e design de agentes.
+# 
+# Este notebook é um ponto de partida essencial para qualquer pessoa que deseja se aprofundar no mundo dos Agentes de IA e aproveitar todo o potencial do LangChain. Vamos começar!
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -25,7 +76,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 # !pip install -q langchain langchain-openai openai google-search-results # Script-patched
@@ -119,7 +170,7 @@ tools = {
 }
 
 tool_names = list(tools.keys())
-tool_descriptions = """\n".join([f"{name}: {func.__doc__}" for name, func in tools.items()])
+tool_descriptions = "\n".join([f"{name}: {func.__doc__}" for name, func in tools.items()])
 
 print("Ferramentas Disponíveis:")
 print(tool_descriptions)

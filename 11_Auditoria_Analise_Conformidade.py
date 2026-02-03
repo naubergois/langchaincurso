@@ -7,6 +7,45 @@
 # 
 # **Cenário Real:** Analisar justificativas de despesas de viagem contra a política de viagens da empresa.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 11. Auditoria: Análise de Conformidade
+# 
+# Bem-vindo ao módulo de Auditoria, onde exploraremos aplicações práticas da LangChain para resolver desafios do mundo real. Neste notebook, focaremos na **Verificação de Conformidade**, um caso de uso essencial para garantir que processos e dados estejam alinhados com políticas e regulamentos. Imagine ter um sistema capaz de analisar automaticamente transações, contratos ou e-mails, identificando desvios e alertando para potenciais problemas. É isso que vamos construir!
+# 
+# ## Resumo Executivo
+# 
+# Este notebook demonstra como usar a LangChain para criar um sistema de auditoria automatizado capaz de verificar a conformidade de informações textuais com regras predefinidas. Analisaremos exemplos práticos, desde a verificação de despesas de viagem até a conformidade de contratos, mostrando como a IA Generativa pode otimizar processos de auditoria e liberar recursos humanos para tarefas mais estratégicas.
+# 
+# ## Conceitos Chave
+# 
+# Para aproveitar ao máximo este notebook, é importante entender alguns conceitos fundamentais:
+# 
+# *   **Chains (Correntes):** São sequências de chamadas a componentes da LangChain, como LLMs (Large Language Models), prompts e parsers. Permitem construir fluxos de trabalho complexos de forma modular e reutilizável. Neste caso, criaremos uma chain para analisar a conformidade de um texto com uma política.
+# *   **LLMs (Large Language Models):** Modelos de linguagem grandes, como o Gemini, capazes de gerar texto, traduzir idiomas, escrever diferentes tipos de conteúdo criativo e responder às suas perguntas de forma informativa. Usaremos um LLM para interpretar as regras de conformidade e avaliar se um determinado texto as cumpre.
+# *   **Prompts:** Instruções específicas fornecidas ao LLM para direcionar sua resposta. Criaremos um prompt detalhado para instruir o LLM a agir como um auditor e a seguir as regras de conformidade definidas.
+# *   **Output Parsers:** Componentes que estruturam a saída do LLM em um formato específico, facilitando o processamento posterior. Usaremos um parser para garantir que a resposta do LLM seja clara e concisa, indicando se o texto está em conformidade ou não.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Definir regras de conformidade claras e concisas para um determinado contexto.
+# *   Criar um `ChatPromptTemplate` para instruir um LLM a agir como um auditor.
+# *   Construir uma chain (corrente) usando LangChain para analisar a conformidade de textos com regras predefinidas.
+# *   Avaliar a conformidade de diferentes exemplos de texto usando a chain criada.
+# *   Entender como escalar o processo de auditoria para grandes volumes de dados usando `chain.batch()`.
+# *   Adaptar o sistema de auditoria para diferentes casos de uso, como análise de contratos, e-mails ou logs de sistemas.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# A análise de conformidade é um caso de uso poderoso e relevante no ecossistema LangChain. Ela demonstra como a IA Generativa pode ser aplicada para automatizar tarefas repetitivas e demoradas, permitindo que as equipes de auditoria e compliance se concentrem em atividades de maior valor agregado. Este notebook fornece uma base sólida para construir sistemas de auditoria mais complexos e personalizados, integrando-os com outras ferramentas e plataformas. Ao dominar este conceito, você estará um passo à frente na aplicação da LangChain para resolver desafios de negócios reais.
+# 
+# Vamos começar a construir nosso sistema de auditoria!
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###

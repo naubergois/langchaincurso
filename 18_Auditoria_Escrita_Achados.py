@@ -7,6 +7,41 @@
 # 
 # **Objetivo:** Transformar anotações rascunhadas em um achado formal.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 18. Auditoria: Escrita de Achados (Método 5Cs)
+# 
+# Bem-vindo a este notebook dedicado à arte de redigir achados de auditoria de forma clara, concisa e impactante! Auditores possuem a capacidade crítica de identificar problemas, mas a comunicação eficaz desses achados é igualmente crucial para gerar mudanças positivas. Este notebook explora como a IA Generativa, e especificamente o LangChain, podem auxiliar na estruturação e apresentação de achados de auditoria, seguindo o padrão global dos 5 Cs do IIA (Institute of Internal Auditors).
+# 
+# **Resumo Executivo:**
+# 
+# Neste notebook, você aprenderá a utilizar o LangChain para transformar notas de campo de auditoria em relatórios concisos e profissionais, aderentes aos princípios dos 5 Cs (Critério, Condição, Causa, Consequência e Correção). Demonstraremos como prompts bem elaborados podem instruir modelos de linguagem a estruturar informações complexas de forma clara e persuasiva.
+# 
+# **Conceitos Chave:**
+# 
+# *   **LangChain:** Um framework para desenvolver aplicações impulsionadas por modelos de linguagem. Ele facilita a criação de pipelines complexos, permitindo a integração de LLMs com diversas fontes de dados e ferramentas.
+# *   **LLMs (Large Language Models):** Modelos de linguagem treinados em grandes volumes de texto, capazes de gerar texto, traduzir idiomas, escrever diferentes tipos de conteúdo criativo e responder às suas perguntas de forma informativa. Neste contexto, usaremos o LLM para formatar e refinar os achados de auditoria.
+# *   **Prompts:** Instruções fornecidas ao LLM para guiar a geração de texto. A qualidade do prompt é crucial para obter resultados precisos e relevantes. Aprenderemos a criar prompts eficazes para a redação de achados de auditoria.
+# *   **Chains:** Sequências de chamadas a LLMs ou outras utilidades. O LangChain permite criar chains complexas para automatizar tarefas repetitivas.
+# *   **Output Parsers:** Ferramentas que estruturam a saída dos LLMs em formatos específicos, como strings, JSON ou objetos Python.
+# 
+# **Objetivos de Aprendizado:**
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Entender a importância da clareza e concisão na redação de achados de auditoria.
+# *   Aplicar os princípios dos 5 Cs na estruturação de achados de auditoria.
+# *   Utilizar o LangChain para automatizar a formatação de achados de auditoria.
+# *   Criar prompts eficazes para instruir modelos de linguagem a redigir achados de auditoria.
+# *   Avaliar a qualidade dos achados de auditoria gerados por LLMs.
+# 
+# **Importância no Ecossistema LangChain:**
+# 
+# Este notebook demonstra um caso de uso prático e relevante do LangChain no campo da auditoria. A capacidade de automatizar a redação de achados de auditoria pode economizar tempo, melhorar a consistência e aumentar a eficácia dos processos de auditoria. Ao dominar esta técnica, você estará apto a aplicar o LangChain em uma variedade de outros contextos que exigem a estruturação e apresentação de informações complexas. Prepare-se para aprimorar suas habilidades de comunicação e elevar o nível de seus relatórios de auditoria com o poder da IA Generativa!
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###

@@ -7,6 +7,39 @@
 # 
 # **Objetivo:** Gerar um checklist de auditoria para o processo de "Admissão de Funcionários".
 
+# # Explicação Detalhada do Assunto
+# 
+# # 17. Auditoria: Geração de Checklists de Verificação
+# 
+# Bem-vindo a este notebook dedicado à aplicação de Large Language Models (LLMs) na auditoria, especificamente na geração automatizada de checklists de verificação. Em processos de auditoria, a criação de um programa de trabalho detalhado (checklist) é um passo crucial. Este notebook demonstra como podemos alavancar o poder dos LLMs para automatizar e otimizar essa etapa, tornando o processo mais eficiente e preciso.
+# 
+# ## Resumo Executivo
+# 
+# Neste notebook, exploraremos como utilizar a LangChain e modelos de linguagem generativa para criar checklists de auditoria. Abordaremos desde a definição do processo a ser auditado até a geração de prompts eficazes que extraiam os passos de verificação de riscos chave. Através de exemplos práticos, você aprenderá a adaptar e aplicar essa técnica em seus próprios projetos de auditoria.
+# 
+# ## Conceitos Chave
+# 
+# *   **LLMs (Large Language Models):** Modelos de linguagem de grande escala, como o Gemini, capazes de gerar texto coerente e relevante com base em um prompt. Usaremos suas capacidades para criar checklists de auditoria.
+# *   **LangChain:** Uma framework poderosa que facilita a construção de aplicações utilizando LLMs. A LangChain nos permite orquestrar prompts, modelos e outras ferramentas de forma eficiente e modular.
+# *   **Prompts:** Instruções específicas fornecidas ao LLM para direcionar sua resposta. A qualidade do prompt é crucial para obter um checklist de auditoria preciso e relevante.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Compreender o processo de geração de checklists de auditoria utilizando LLMs.
+# *   Definir e descrever um processo de negócio para fins de auditoria.
+# *   Criar prompts eficazes para extrair passos de verificação de riscos chave de um LLM.
+# *   Interpretar e avaliar a qualidade das checklists geradas pelo modelo.
+# *   Adaptar e aplicar esta técnica em diferentes contextos de auditoria.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# A capacidade de gerar checklists de auditoria automaticamente demonstra o potencial da LangChain para automatizar tarefas complexas e repetitivas. Ao integrar LLMs em processos de auditoria, podemos aumentar a eficiência, reduzir o risco de erros e liberar os auditores para se concentrarem em atividades de maior valor agregado, como análise e tomada de decisões. Este notebook ilustra um caso de uso prático e valioso da LangChain no mundo real, destacando seu papel como uma ferramenta essencial para profissionais de dados e desenvolvedores de IA.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###

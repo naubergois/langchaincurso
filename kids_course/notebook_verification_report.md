@@ -1,0 +1,35 @@
+# Notebook Verification Report (Static Analysis)
+
+| Notebook | Status | Details |
+| :--- | :--- | :--- |
+| CRIANCAS_01_Introducao_LangChain_Modelos.ipynb | PASS | OK |
+| CRIANCAS_02_Prompt_Templates_Parsers.ipynb | PASS | OK |
+| CRIANCAS_03_Memoria.ipynb | PASS | OK |
+| CRIANCAS_04_Chains.ipynb | PASS | OK |
+| CRIANCAS_05_RAG_Document_Loaders.ipynb | PASS | OK |
+| CRIANCAS_06_RAG_Embeddings_VectorStores.ipynb | PASS | OK |
+| CRIANCAS_07_RAG_RetrievalQA.ipynb | PASS | OK |
+| CRIANCAS_08_Agentes_Tools_Intro.ipynb | PASS | OK |
+| CRIANCAS_09_Agentes_Tools_Custom.ipynb | PASS | OK |
+| CRIANCAS_10_Chatbot_RAG_Completo.ipynb | PASS | OK |
+| CRIANCAS_11_Auditoria_Analise_Conformidade.ipynb | PASS | OK |
+| CRIANCAS_12_Auditoria_Extracao_Dados_Contratos.ipynb | PASS | OK |
+| CRIANCAS_13_Auditoria_Resumo_Relatorios.ipynb | PASS | OK |
+| CRIANCAS_14_Auditoria_Classificacao_Riscos.ipynb | PASS | OK |
+| CRIANCAS_15_Auditoria_RAG_Legislacao.ipynb | PASS | OK |
+| CRIANCAS_16_Auditoria_Comparacao_Normas.ipynb | PASS | OK |
+| CRIANCAS_17_Auditoria_Geracao_Checklists.ipynb | PASS | OK |
+| CRIANCAS_18_Auditoria_Escrita_Achados.ipynb | PASS | OK |
+| CRIANCAS_19_Auditoria_Deteccao_Anomalias.ipynb | PASS | OK |
+| CRIANCAS_20_Auditoria_Agente_Investigativo.ipynb | PASS | OK |
+| CRIANCAS_21_Pydantic_Fundamentos.ipynb | PASS | OK |
+| CRIANCAS_22_LangChain_Structured_Output_Pydantic.ipynb | PASS | OK |
+| CRIANCAS_23_LangGraph_Intro_Fluxos_Ciclicos.ipynb | PASS | OK |
+| CRIANCAS_24_LangGraph_Human_In_The_Loop.ipynb | PASS | OK |
+| CRIANCAS_25_LangGraph_Multi_Agent_Supervisor.ipynb | PASS | OK |
+| CRIANCAS_26_LangSmith_Intro.ipynb | PASS | OK |
+| CRIANCAS_26_ReAct_Fundamentos_Prompting.ipynb | PASS | OK |
+| CRIANCAS_27_ReAct_LangChain_Implementation.ipynb | PASS | OK |
+| CRIANCAS_28_ReAct_Custom_Tools_Error_Handling.ipynb | PASS | OK |
+| CRIANCAS_29_n8n_Webhook_Client.ipynb | PASS | OK |
+| CRIANCAS_30_n8n_Python_Node_Prototyping.ipynb | PASS | OK |

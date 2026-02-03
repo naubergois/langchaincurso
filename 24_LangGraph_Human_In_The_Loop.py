@@ -10,6 +10,37 @@
 # - Usar `interrupt_before` para pausar.
 # - Simular uma aprovação humana.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 24. LangGraph: Human-in-the-Loop
+# 
+# Este notebook explora a integração de interação humana em fluxos de trabalho LangGraph, permitindo a criação de sistemas de IA mais seguros e controlados, onde a decisão final não é tomada automaticamente pelo agente, mas sim aprovada (ou editada) por um humano.
+# 
+# **Conceitos Chave:**
+# 
+# *   **LangGraph:** Uma estrutura para construir aplicações de IA complexas, modelando-as como grafos, onde cada nó representa uma ação ou componente (ex: um agente, uma ferramenta).
+# *   **Checkpointing:** O processo de salvar o estado de execução do grafo em um determinado ponto. Isso permite pausar a execução e retomá-la mais tarde, preservando o progresso.
+# *   **Interrupção (`interrupt_before`):** Uma funcionalidade que permite pausar a execução do grafo antes de um determinado nó ser executado, dando a oportunidade para intervenção humana.
+# *   **Thread ID:** Um identificador único para cada sessão de execução do grafo, permitindo rastrear e gerenciar o estado da execução.
+# *   **Estado (State):** Representa as variáveis e dados que são passados entre os nós do grafo, mantendo o contexto da execução.
+# 
+# **Objetivos de Aprendizado:**
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Construir um grafo LangGraph que envolve um agente para escrever um e-mail e um agente para enviá-lo.
+# *   Implementar o checkpointing para salvar o estado do grafo durante a execução.
+# *   Utilizar a funcionalidade `interrupt_before` para pausar a execução do grafo antes de um nó específico.
+# *   Simular a intervenção humana, inspecionando o estado do grafo e tomando decisões (aprovar ou editar).
+# *   Entender como a interação humana pode ser integrada em fluxos de trabalho LangGraph para criar sistemas mais seguros e controlados.
+# 
+# **Importância no Ecossistema LangChain:**
+# 
+# A capacidade de integrar a intervenção humana é crucial em sistemas de IA que lidam com tarefas críticas ou sensíveis. O LangGraph, com seus recursos de checkpointing e interrupção, oferece uma maneira flexível e poderosa de construir esses sistemas. Ao permitir que humanos revisem e aprovem as decisões tomadas pela IA, podemos garantir que os sistemas de IA sejam usados de forma responsável e ética. Este notebook demonstra como usar esses recursos para criar um fluxo de trabalho onde um rascunho de e-mail gerado por IA é revisado e aprovado por um humano antes de ser enviado, mas os princípios aqui apresentados podem ser aplicados a uma ampla gama de tarefas e domínios.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -23,7 +54,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 import os

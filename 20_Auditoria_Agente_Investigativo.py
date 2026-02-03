@@ -7,6 +7,41 @@
 # 
 # **Objetivo:** Investigar a reputação de um Fornecedor.
 
+# # Explicação Detalhada do Assunto
+# 
+# # 20. Auditoria: Agente Investigativo
+# 
+# Bem-vindo ao ápice da automação com LangChain! Neste notebook, exploraremos a criação de um Agente Investigativo, capaz de cruzar dados de forma autônoma para realizar auditorias e investigações. Vamos construir um sistema que, dado o nome de um fornecedor (ou CNPJ), utiliza "tools" (simuladas e reais) para verificar sua situação cadastral, identificar sócios e verificar a existência de irregularidades.
+# 
+# ## Resumo Executivo
+# 
+# Este notebook demonstra como construir um agente inteligente capaz de realizar investigações complexas, simulando um processo de auditoria. Utilizaremos LangChain para orquestrar a interação entre um modelo de linguagem (LLM) e diversas ferramentas (tools) para coletar e analisar informações sobre uma empresa. Ao final, você terá um protótipo funcional de um agente capaz de auxiliar em processos de due diligence e compliance.
+# 
+# ## Conceitos Chave
+# 
+# Para aproveitar ao máximo este notebook, é importante entender os seguintes conceitos:
+# 
+# *   **Agentes (Agents):** São sistemas que utilizam um LLM para determinar quais ações devem ser tomadas com base em uma entrada (input). Eles "pensam" sobre a tarefa, decidem qual ferramenta usar e executam essa ferramenta, repetindo o processo até atingir um objetivo.
+# *   **Ferramentas (Tools):** São funções específicas que o agente pode usar para interagir com o mundo externo. Neste notebook, criaremos ferramentas simuladas para consulta de dados cadastrais e verificação de listas de restrição. Ferramentas reais podem incluir acesso a APIs de bancos de dados, sistemas de busca na web e outras fontes de informação.
+# *   **LLM (Large Language Model):** O modelo de linguagem grande é o "cérebro" do agente. Ele recebe as informações, decide qual ferramenta usar e interpreta os resultados. Neste notebook, utilizaremos um modelo do Google AI.
+# *   **Chains:** Sequências de chamadas a LLMs ou outras utilidades. Agentes são uma forma mais dinâmica de chains, onde a ordem das chamadas é determinada pelo LLM.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Criar ferramentas (tools) personalizadas para um agente LangChain.
+# *   Configurar um agente LangChain para utilizar diversas ferramentas de forma inteligente.
+# *   Utilizar o agente para investigar empresas e identificar possíveis irregularidades.
+# *   Compreender o fluxo de trabalho de um agente investigativo e como ele pode ser aplicado em casos reais de auditoria e compliance.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# A capacidade de criar agentes inteligentes é um dos pilares do LangChain. Este notebook demonstra como usar agentes para automatizar tarefas complexas que antes exigiam intervenção humana significativa. Ao dominar a criação de agentes investigativos, você estará apto a construir soluções de ponta para auditoria, compliance, análise de risco e outras áreas que exigem a coleta e análise de grandes volumes de dados. Este é um passo crucial para desbloquear o potencial da IA Generativa em aplicações práticas e relevantes para o mundo real. Prepare-se para transformar a forma como as investigações são conduzidas!
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -20,7 +55,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 import os

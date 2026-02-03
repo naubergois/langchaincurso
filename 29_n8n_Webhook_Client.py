@@ -12,6 +12,42 @@
 # 
 # ---
 
+# # Explicação Detalhada do Assunto
+# 
+# # Integrando LangChain com n8n: Automatizando Workflows com Webhooks
+# 
+# Bem-vindo(a) a este guia prático sobre como integrar o poder do LangChain com a versatilidade do n8n, uma ferramenta de automação de workflows robusta e flexível. Neste notebook, exploraremos como usar o n8n para expandir as capacidades do LangChain, conectando seus agentes e aplicações de IA a uma vasta gama de serviços e APIs.
+# 
+# ## Resumo Executivo
+# 
+# Este notebook demonstra como integrar o LangChain com o n8n, uma ferramenta de automação de workflows, utilizando webhooks. Em vez de reimplementar a lógica de conexão com diversos serviços (Slack, Google Sheets, Email, etc.) diretamente no seu código Python, você aprenderá a delegar essa tarefa ao n8n, criando workflows complexos e reutilizáveis. O objetivo é capacitar seus agentes LangChain a interagir com o mundo externo de forma eficiente e escalável.
+# 
+# ## Conceitos Chave
+# 
+# *   **n8n:** Uma plataforma de automação de workflows que permite conectar diferentes aplicativos e serviços sem a necessidade de código complexo.
+# *   **Webhook:** Um mecanismo que permite que um aplicativo envie informações em tempo real para outro aplicativo sempre que um determinado evento acontece. No contexto deste notebook, o LangChain enviará dados para um workflow do n8n via webhook.
+# *   **LangChain Tools:** Funções encapsuladas que permitem que um agente LangChain interaja com o mundo externo. Neste caso, criaremos uma Tool que envia dados para o n8n.
+# *   **Agentes LangChain:** Entidades que utilizam um modelo de linguagem (LLM) para tomar decisões sobre quais ações executar com base em uma entrada (prompt). O agente utilizará a Tool criada para interagir com o n8n.
+# *   **Pydantic BaseModel:** Utilizado para definir o schema dos dados que serão enviados para o n8n, garantindo que os dados estejam no formato esperado.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao concluir este notebook, você será capaz de:
+# 
+# *   Compreender o conceito de webhooks e como eles funcionam no n8n.
+# *   Criar um workflow simples no n8n que recebe dados via webhook.
+# *   Definir um schema de dados usando Pydantic para garantir a integridade dos dados enviados para o n8n.
+# *   Encapsular a interação com o n8n como uma Tool do LangChain.
+# *   Utilizar um agente LangChain para chamar a Tool e enviar dados para o workflow do n8n.
+# *   Adaptar este conhecimento para criar integrações mais complexas com outros serviços e APIs através do n8n.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# A capacidade de integrar o LangChain com ferramentas de automação como o n8n é fundamental para construir aplicações de IA generativa robustas e escaláveis. Ao abstrair a complexidade da integração com diferentes serviços para o n8n, você pode focar no desenvolvimento do seu agente e na lógica principal da sua aplicação. Além disso, essa abordagem permite reutilizar workflows do n8n em diferentes partes da sua aplicação LangChain, promovendo a modularidade e a manutenibilidade do seu código. Esta integração abre um leque de possibilidades para automatizar tarefas, integrar dados de diversas fontes e criar fluxos de trabalho inteligentes impulsionados pela IA generativa.
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -25,7 +61,7 @@ for p in ['.', '..', 'scripts', '../scripts']:
         break
 if os.getenv('GOOGLE_API_KEY'):
     os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
-    os.environ['OPENAI_API_KEY'] = os.getenv('GOOGLE_API_KEY')
+    os.environ['GOOGLE_API_KEY'] = os.getenv('GOOGLE_API_KEY')
 ### INJECTION END ###
 
 # !pip install -q langchain langchain-openai # Script-patched

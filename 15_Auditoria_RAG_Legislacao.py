@@ -8,6 +8,48 @@
 # **Objetivo:** Criar um RAG sobre um texto legal (ex: Lei 13.303 - Lei das Estatais ou 14.133 - Nova Lei de Licitações).
 # *Nota: Usaremos um texto de exemplo curto para simular a lei no Colab.*
 
+# # Explicação Detalhada do Assunto
+# 
+# # 15. Auditoria: RAG em Legislação (Lei das Estatais/Licitações)
+# 
+# Auditores precisam consultar leis constantemente. Um chatbot especialista em uma lei específica economiza tempo de pesquisa. Este notebook demonstra como construir um sistema de Recuperação Aumentada de Geração (RAG) focado na legislação, especificamente utilizando a Lei nº 13.303 (Lei das Estatais) como exemplo. O objetivo é criar um assistente virtual capaz de responder a perguntas complexas sobre a lei, fornecendo respostas precisas e fundamentadas diretamente no texto legal.
+# 
+# ## Resumo Executivo
+# 
+# Este notebook explora a aplicação de técnicas de RAG (Retrieval-Augmented Generation) para a criação de um sistema de consulta jurídica inteligente. Demonstraremos como carregar, indexar e consultar a Lei das Estatais (Lei nº 13.303) utilizando LangChain e modelos de linguagem generativos. O foco é simular um cenário real onde auditores e profissionais jurídicos precisam acessar informações específicas dentro de um grande volume de texto legal de forma rápida e precisa. Ao final, você terá um protótipo funcional capaz de responder a perguntas sobre a lei, citando as fontes relevantes.
+# 
+# ## Conceitos Chave
+# 
+# Para entender completamente o que faremos, é importante conhecer alguns conceitos fundamentais:
+# 
+# *   **RAG (Retrieval-Augmented Generation):** Uma técnica que combina a capacidade de busca (retrieval) em uma base de conhecimento com a habilidade de geração de texto de um modelo de linguagem. Em vez de depender apenas do conhecimento pré-existente do modelo, o RAG permite que ele consulte informações externas relevantes antes de gerar uma resposta, resultando em respostas mais precisas e contextualizadas.
+# *   **Chains (Cadeias):** Em LangChain, Chains são sequências de chamadas a componentes, como modelos de linguagem, prompts e outros Chains. Elas permitem criar fluxos de trabalho complexos, como o pipeline de RAG que construiremos neste notebook.
+# *   **Text Splitter (Divisor de Texto):** Um componente que divide um texto longo em partes menores (chunks) para facilitar a indexação e a busca. Diferentes estratégias de divisão podem ser utilizadas, como divisão por caracteres, sentenças ou parágrafos.
+# *   **Embeddings (Incorporações):** Representações vetoriais de palavras ou frases que capturam seu significado semântico. Embeddings permitem comparar a similaridade entre diferentes textos e encontrar os trechos mais relevantes para uma determinada consulta.
+# *   **Vector Store (Banco de Dados Vetorial):** Um banco de dados otimizado para armazenar e buscar embeddings. Ele permite encontrar os trechos de texto mais similares a uma consulta com alta eficiência.
+# *   **Prompts:** Instruções textuais fornecidas ao modelo de linguagem para guiá-lo na geração da resposta desejada. Um bom prompt é crucial para obter respostas precisas e relevantes.
+# 
+# ## Objetivos de Aprendizado
+# 
+# Ao completar este notebook, você será capaz de:
+# 
+# *   Carregar e pré-processar um texto legal usando LangChain.
+# *   Dividir o texto em chunks utilizando diferentes estratégias de Text Splitter.
+# *   Gerar embeddings para os chunks de texto utilizando um modelo de embeddings.
+# *   Armazenar os embeddings em um Vector Store.
+# *   Implementar um pipeline de RAG para consultar o texto legal.
+# *   Avaliar a qualidade das respostas geradas pelo sistema.
+# *   Adaptar o pipeline para diferentes textos legais.
+# 
+# ## Importância no Ecossistema LangChain
+# 
+# A capacidade de construir sistemas de RAG é fundamental no ecossistema LangChain. Ela permite que você aproveite o poder dos modelos de linguagem generativos para resolver problemas complexos em diversos domínios, desde a consulta de documentos legais até a criação de chatbots especializados em áreas específicas do conhecimento. Este notebook fornece um exemplo prático e detalhado de como construir um sistema de RAG funcional, que pode ser adaptado e expandido para atender às suas necessidades. Dominar essas técnicas abrirá um leque de possibilidades para a criação de aplicações inteligentes e úteis.
+# 
+# Vamos começar!
+# 
+# ---
+# 
+
 
 
 ### INJECTION START ###
@@ -82,7 +124,7 @@ from langchain_community.vectorstores import FAISS
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 splits = text_splitter.create_documents([lei_texto])
 
-vectorstore = FAISS.from_documents(splits, GoogleGenerativeAIEmbeddings())
+vectorstore = FAISS.from_documents(splits, GoogleGenerativeAIEmbeddings(model="models/embedding-001"))
 retriever = vectorstore.as_retriever()
 
 
