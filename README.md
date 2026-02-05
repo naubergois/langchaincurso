@@ -29,6 +29,7 @@ Acesse os notebooks diretamente no Google Colab para execução imediata na nuve
 | 18. Auditoria: Escrita de Achados | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1X0ijBnceiSdTlPLmUbDsXY8p6NR1Lzlx) |
 | 19. Auditoria: Detecção de Anomalias | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1K0b_5QoZCKrJlsT39s_wOZMQLi1Kn7Zg) |
 | 20. Auditoria: Agente Investigativo | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1GS0Vq4AMJAQRffcTJiZIJpJixRESBZIE) |
+| 20. Auditoria: Detecção de Anomalias (Compras) | [📂 Arquivo Local](20_Auditoria_Compras_Anomalias.ipynb) |
 | 21. Pydantic: Fundamentos | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1WR6ObPNK4nVG-yo4BUrk_k8QnSjgm3gl) |
 | 22. Structured Output com Pydantic | [🚀 Abrir no Colab](https://colab.research.google.com/drive/10TDTtlV4z_LSp1c9ysxsTHksGF-JXxmM) |
 | 23. LangGraph: Fluxos Cíclicos | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1jY4lFmRC9yZ1x_A1LYyU7hNnHdTo-I8Y) |
