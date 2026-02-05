@@ -41,6 +41,7 @@ Acesse os notebooks diretamente no Google Colab para execução imediata na nuve
 | 28. ReAct Custom Tools Error Handling | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1TskJru7IF82Nz_ufu1IjyAiJ1IXKNXnp) |
 | 29. n8n Webhook Client | [🚀 Abrir no Colab](https://colab.research.google.com/drive/12KLDSxeVbKVUSzUE4eRxV1hQ11Iz0vvW) |
 | 30. n8n Python Node Prototyping | [🚀 Abrir no Colab](https://colab.research.google.com/drive/1Fv12u76oU1RViKmEkW86PuviYDqELQrB) |
+| 31. Auditoria Diario Oficial Agente | [📂 Arquivo Local](31_Auditoria_Diario_Oficial_Agente.ipynb) |
 
 
 ## 👶 LangChain para Crianças
