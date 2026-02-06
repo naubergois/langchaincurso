@@ -1,0 +1,12 @@
+
+    RELATÓRIO DE AUDITORIA
+    ======================
+    TÍTULO: Sobrefaturamento em Contrato de Limpeza Urbana
+    RISCO: CRÍTICO/EXTREMO
+    
+    DESCRIÇÃO:
+    Durante a auditoria do contrato de prestação de serviços de limpeza urbana, foi identificado que os valores cobrados pela empresa contratada estão acima dos preços de mercado para os mesmos serviços. O exame das notas fiscais e dos contratos revela diferenças significativas entre os valores cobrados e as referências de preços obtidas junto a outras empresas do setor. Além disso, algumas faturas apresentavam itens não previstos no contrato, gerando um aumento adicional nos custos. Essa irregularidade pode indicar práticas de sobrefaturamento e comprometer a transparência e a eficiência no uso dos recursos públicos.
+    
+    RECOMENDAÇÃO:
+    Recomenda-se a realização de uma revisão detalhada dos contratos e das faturas apresentadas pela empresa, além de uma comparação com os preços praticados por outras empresas do setor. A administração deve considerar a possibilidade de instaurar uma investigação para apurar as circunstâncias do sobrefaturamento, além de promover a reavaliação do contrato, adotando medidas corretivas necessárias e, se necessário, rescindir o contrato com a empresa que apresentou as irregularidades.
+    
